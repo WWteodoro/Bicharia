@@ -1,0 +1,15 @@
+GET http://localhost:3000/
+
+### Get Pets
+GET http://localhost:3000/pets
+
+### Create Pets
+POST http://localhost:3000/pets
+Content-Type: application/json
+
+{
+    "name": "Belinha",
+    "type": "cachorro",
+    "password": "A1234567.a",
+    "birthdate": "20/09/2001"
+}
