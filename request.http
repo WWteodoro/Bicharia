@@ -16,5 +16,21 @@ Content-Type: application/json
     "password": "A1234567.a",
     "confirmEmail": "calvo@calvo.calvo",
     "confirmPassword": "A1234567.a",
+    //"birthdate": "20/09/2001"
+}
+
+### Update User
+PUT  http://localhost:3333/users/06389d3a-9f60-4dd7-8f78-7abb7390915d
+Content-Type: application/json
+
+{
+    "name": "calvo2",
+    "email": "calvo@calvo.calvo",
+    "password": "A1234567.a",
+    "confirmEmail": "calvo@calvo.calvo",
+    "confirmPassword": "A1234567.a",
     "birthdate": "20/09/2001"
 }
+
+### Delete User
+DELETE http://localhost:3333/users/5e06cafc-644b-4f80-9ecb-e1f3dd1969fd

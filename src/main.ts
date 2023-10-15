@@ -1,8 +1,12 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { route } from './routes';
 import bodyParser from 'body-parser'
+import { PrismaClient } from '@prisma/client';
 
 require('dotenv').config({ path: '.env'});
+
+const prisma = new PrismaClient();
+prisma.$connect()
 
 //criando backend através do express
 const app = express();
