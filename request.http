@@ -1,38 +1,47 @@
-<<<<<<< HEAD
 GET http://localhost:3000/
+
+### Delete Pets
+DELETE http://localhost:3000/pets/WHJu7iBJg6
 
 ### Get Pets
 GET http://localhost:3000/pets
+
+### Change Pets name
+PUT http://localhost:3000/pets/updateName/cbhELTs5hi
+Content-Type: application/json
+
+
+{
+    "newName": "Trambolho"
+}
+
+### Change Pets type
+PUT http://localhost:3000/pets/updateType/cbhELTs5hi
+Content-Type: application/json
+
+
+{
+    "newType": "outros"
+}
+
+### Update Pet id
+PUT http://localhost:3000/pets/updateId/DnakbD7aJS
+Content-Type: application/json
+
+{
+    "newId": "neymar"
+}
 
 ### Create Pets
 POST http://localhost:3000/pets
 Content-Type: application/json
 
+
+
 {
     "name": "Belinha",
     "type": "cachorro",
     "password": "A1234567.a",
-    "birthdate": "20/09/2001"
-}
-=======
-GET http://localhost:3333/
-
-### Get Users
-GET http://localhost:3333/users
-
-### Get User
-GET http://localhost:3333/users/14d58f3c-2057-47d2-bf5b-1c5fb85c9e11
-
-### Create User
-POST http://localhost:3333/users
-Content-Type: application/json
-
-{
-    "name": "calvo",
-    "email": "calvo@calvo.calvo",
-    "password": "A1234567.a",
-    "confirmEmail": "calvo@calvo.calvo",
     "confirmPassword": "A1234567.a",
     "birthdate": "20/09/2001"
 }
->>>>>>> 5701dbde88c812b00a687deed9c529ca66227667

@@ -11,11 +11,4 @@ app.use(bodyParser.json())
 //backend usa rota raiz
 app.use('/', route);
 
-<<<<<<< HEAD
 app.listen(3000, () =>  console.log('Funcionou :o'));
-=======
-//executa o backend na porta mencionada e após, executa a função callback
-app.listen(Number(process.env.PORT), () => {
-    console.log('Rodando tá!!!')
-})
->>>>>>> 5701dbde88c812b00a687deed9c529ca66227667

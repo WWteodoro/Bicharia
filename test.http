@@ -1,6 +1,8 @@
 POST http://localhost:3000/pets
 Content-Type: application/json
 
+
+
 {
   "name": "Belinha",
   "type": "cachorro",

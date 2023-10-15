@@ -4,5 +4,5 @@ export interface IPets {
     type: string;
     password: string;
     confirmPassword: string;
-    birthdate: Date;
+    birthdate: string;
 }
