@@ -14,5 +14,27 @@ export class UserRepository implements IUserRepository{
             data: props
         })
     }
+
+    async findOneUser(id: string): Promise<IUser>{
+        const result = await prisma.user.findUnique({
+            where: { id }
+        })
+
+        if(!result) throw new Error('User not found')
+        return result
+    }
+
+    async update(props: IUser, id: string): Promise<void> {
+        await prisma.user.update({
+            where: { id },
+            data: props
+        })
+    }
+
+    async delete(id: string): Promise<void>{
+        await prisma.user.delete({
+            where: { id }
+        })
+    }
     
 }
