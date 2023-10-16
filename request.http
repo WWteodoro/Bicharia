@@ -4,8 +4,7 @@ GET http://localhost:3333/
 GET http://localhost:3333/users
 
 ### Get User
-GET http://localhost:3333/users/14d58f3c-2057-47d2-bf5b-1c5fb85c9e11
-
+GET http://localhost:3333/users/6140646e-168a-4fbc-af44-3ec8a2a081fa
 ### Create User
 POST http://localhost:3333/users
 Content-Type: application/json
@@ -13,10 +12,7 @@ Content-Type: application/json
 {
     "name": "calvo",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a",
-    "confirmEmail": "calvo@calvo.calvo",
-    "confirmPassword": "A1234567.a",
-    //"birthdate": "20/09/2001"
+    "password": "A1234567.a"
 }
 
 ### Update User
@@ -26,10 +22,7 @@ Content-Type: application/json
 {
     "name": "calvo2",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a",
-    "confirmEmail": "calvo@calvo.calvo",
-    "confirmPassword": "A1234567.a",
-    "birthdate": "20/09/2001"
+    "password": "A1234567.a"
 }
 
 ### Delete User

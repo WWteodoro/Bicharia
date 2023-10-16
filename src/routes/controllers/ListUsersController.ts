@@ -1,10 +1,12 @@
 import { Request, Response } from "express";
 import { IUserRepository } from "../../interfaces/IUserRepository";
+import { ListUsersService } from "../../services/ListUsersService";
 
 export class ListUsersController {
     constructor(private userRepo: IUserRepository){}
     async handle(_: Request, res: Response): Promise<Response> {
-     const users = await this.userRepo.findAll()
+     const listUsersService = new ListUsersService(this.userRepo)
+     const users = await listUsersService.execute()
      return res.json(users)
     }
 }
