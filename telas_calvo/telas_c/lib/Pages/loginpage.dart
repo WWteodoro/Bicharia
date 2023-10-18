@@ -7,8 +7,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Color.fromARGB(255, 255, 255, 255),
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: [
             AppBar(
@@ -38,7 +38,7 @@ class LoginPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   )),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 10,
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Container(
               height: 40,
@@ -70,8 +70,8 @@ class LoginPage extends StatelessWidget {
               onTap: () {},
               child: Container(
                 height: 50,
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.symmetric(horizontal: 8),
+                padding: const EdgeInsets.all(8),
+                margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
                   color: Colors.yellow[500],
                   borderRadius: BorderRadius.circular(180),
@@ -120,7 +120,7 @@ class LoginPage extends StatelessWidget {
             Container(
               height: 60,
               alignment: Alignment.center,
-              child: ButtonBar(
+              child: const ButtonBar(
                 alignment: MainAxisAlignment.center,
                 children: [Text("Cadastrar-se", textAlign: TextAlign.center)],
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'Pages/loginPage.dart';
-import 'Pages/cadastroPage.dart';
+
+import 'Pages/loginpage.dart';
+import 'Pages/cadastropage.dart';
 
 void main() => runApp(const MyApp());
 
