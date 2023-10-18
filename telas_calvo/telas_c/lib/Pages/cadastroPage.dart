@@ -56,7 +56,7 @@ class CadastroPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   )),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 10,
