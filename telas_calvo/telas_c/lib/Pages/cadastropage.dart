@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CadastroPage extends StatelessWidget {
-  const CadastroPage({super.key});
-
+  CadastroPage({super.key});
+  final nome = TextEditingController();
+  final email = TextEditingController();
+  final data = TextEditingController();
+  final senha = TextEditingController();
+  final confirmar = TextEditingController();
+  final confirmacaoemail = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +26,8 @@ class CadastroPage extends StatelessWidget {
         ]),
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Color.fromARGB(255, 255, 255, 255),
+        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
+        color: const Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: [
             SizedBox(
@@ -42,7 +47,8 @@ class CadastroPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   )),
-              style: TextStyle(fontSize: 20),
+              controller: nome,
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 10,
@@ -56,20 +62,23 @@ class CadastroPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   )),
-              style: TextStyle(fontSize: 20),
+              controller: email,
+              style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: 10,
             ),
             TextFormField(
+              controller: confirmacaoemail,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                  labelText: "E-mail Confirmação",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
+                labelText: "E-mail Confirmação",
+                labelStyle: TextStyle(
+                  color: Colors.black38,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20,
+                ),
+              ),
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
@@ -78,6 +87,7 @@ class CadastroPage extends StatelessWidget {
             TextFormField(
               keyboardType: TextInputType.text,
               obscureText: true,
+              controller: senha,
               decoration: const InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
@@ -93,6 +103,7 @@ class CadastroPage extends StatelessWidget {
             ),
             TextFormField(
               keyboardType: TextInputType.text,
+              controller: confirmar,
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: "Senha confirmacao",
@@ -109,6 +120,7 @@ class CadastroPage extends StatelessWidget {
             ),
             TextFormField(
               keyboardType: TextInputType.datetime,
+              controller: data,
               decoration: const InputDecoration(
                   labelText: "Data Nascimento",
                   labelStyle: TextStyle(
