@@ -33,7 +33,6 @@ dependencies:
 <<<<<<< HEAD
   http: ^1.1.0
 =======
-  http: ^0.13.4
 >>>>>>> 5b758f18b5ef96cda9397eaaf52561f8c83dd4d7
 
   # The following adds the Cupertino Icons font to your application.
