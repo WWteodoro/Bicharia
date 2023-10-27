@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Pages/home.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/cadastropage.dart';
 
