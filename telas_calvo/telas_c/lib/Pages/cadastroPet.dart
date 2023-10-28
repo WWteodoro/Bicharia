@@ -28,6 +28,10 @@ class CadastroPetPage extends StatelessWidget {
         child: ListView(
           children: [
             const SizedBox(
+              width: 128,
+              height: 128,
+            ),
+            const SizedBox(
               height: 20,
             ),
             TextFormField(
@@ -73,6 +77,9 @@ class CadastroPetPage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 40,
+            ),
             GestureDetector(
               onTap: () {},
               child: Container(
@@ -86,9 +93,6 @@ class CadastroPetPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
-                        height: 40,
-                      ),
                       Text(
                         "P",
                         style: TextStyle(
@@ -159,11 +163,13 @@ class CadastroPetPage extends StatelessWidget {
                           fontSize: 30,
                         ),
                       ),
-                      Text("A",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 30,
-                          )),
+                      Text(
+                        "A",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 30,
+                        ),
+                      ),
                       Text(
                         "R",
                         style: TextStyle(

@@ -1,8 +1,11 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 
-import 'Pages/home.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/cadastropage.dart';
+import 'Pages/cadastroPet.dart';
+import 'Pages/home.dart';
 
 void main() => runApp(const MyApp());
 

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:telas_c/modelo/usermodel.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
+import 'package:telas_c/Pages/home.dart';
 
 class CadastroPage extends StatelessWidget {
   CadastroPage({super.key});
@@ -8,6 +11,7 @@ class CadastroPage extends StatelessWidget {
   final senha = TextEditingController();
   final confirmar = TextEditingController();
   final confirmacaoemail = TextEditingController();
+  Future<Cliente>? cliente;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,7 +136,16 @@ class CadastroPage extends StatelessWidget {
               height: 40,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                if (email.text == confirmacaoemail.text &&
+                    confirmar.text == senha.text) {
+                  cliente = createCliente(nome.text, email.text, senha.text);
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()));
+                } else {
+                  print("ERROR");
+                }
+              },
               child: Container(
                 height: 50,
                 padding: const EdgeInsets.all(8),
