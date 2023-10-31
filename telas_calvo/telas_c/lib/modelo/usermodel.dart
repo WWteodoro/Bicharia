@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-Cliente ClienteFromJson(String str) => Cliente.fromJson(json.decode(str));
+Cliente ClientefromJson(String str) => Cliente.fromJson(json.decode(str));
 String ClienteToJson(Cliente data) => json.encode(data.toJson());
 
 class Cliente {
