@@ -7,13 +7,15 @@ import { ListUsersController } from "./controllers/ListUsersController";
 import { UpdateUserController } from "./controllers/UpdateUserController";
 import { DeleteUserController } from "./controllers/DeleteUserController";
 import { resolveController } from "../adapters/resolveController";
+import { HashRepository } from "../repositories/HashRepository";
 
 const users: IUser[] = [];
 export const userRoute = Router();
 
 
 const userRepo = new UserRepository()
-const createUserController = new CreateUserController(userRepo)
+const hashRepo = new HashRepository()
+const createUserController = new CreateUserController(userRepo, hashRepo)
 const getUserController = new GetUserController(userRepo)
 const listUsersController = new ListUsersController(userRepo)
 const updateUserController = new UpdateUserController(userRepo)

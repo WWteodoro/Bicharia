@@ -4,23 +4,23 @@ GET http://localhost:3333/
 GET http://localhost:3333/users
 
 ### Get User
-GET http://localhost:3333/users/6140646e-168a-4fbc-af44-3ec8a2a081fa
+GET http://localhost:3333/users/1ed5d227-7f6b-4ae5-88cc-b0f87c5dfaed
 ### Create User
 POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-    "name": "calvo",
+    "name": "User2",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
 }
 
 ### Update User
-PUT  http://localhost:3333/users/06389d3a-9f60-4dd7-8f78-7abb7390915d
+PUT  http://localhost:3333/users/1ed5d227-7f6b-4ae5-88cc-b0f87c5dfaed
 Content-Type: application/json
 
 {
-    "name": "calvo2",
+    "name": "up",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
 }
