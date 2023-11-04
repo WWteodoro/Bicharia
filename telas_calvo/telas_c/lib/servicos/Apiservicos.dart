@@ -17,5 +17,9 @@ Future<void> createCliente(String name, String email, String password) async {
         "email": email,
         "password": password
       }));
-  print(response.body);
+  if (response.statusCode == 201) {
+    print("O usuário foi cadastrado");
+  } else {
+    throw Exception('O requisitos não foram atendidios para criar o cliente');
+  }
 }

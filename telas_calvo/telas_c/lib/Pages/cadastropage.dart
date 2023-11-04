@@ -11,7 +11,6 @@ class CadastroPage extends StatelessWidget {
   final senha = TextEditingController();
   final confirmar = TextEditingController();
   final confirmacaoemail = TextEditingController();
-  Future<Cliente>? cliente;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,11 +124,16 @@ class CadastroPage extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 if (email.text == confirmacaoemail.text &&
-                    confirmar.text == senha.text) {
+                    confirmar.text == senha.text &&
+                    email.text != "" &&
+                    senha.text != "") {
                   createCliente(nome.text, email.text, senha.text);
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Home()));
-                } else {}
+                } else {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CadastroPage()));
+                }
               },
               child: Container(
                 height: 50,
