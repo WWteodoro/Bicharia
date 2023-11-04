@@ -126,7 +126,7 @@ class CadastroPage extends StatelessWidget {
               onTap: () {
                 if (email.text == confirmacaoemail.text &&
                     confirmar.text == senha.text) {
-                  cliente = createCliente(nome.text, email.text, senha.text);
+                  createCliente(nome.text, email.text, senha.text);
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => const Home()));
                 } else {}

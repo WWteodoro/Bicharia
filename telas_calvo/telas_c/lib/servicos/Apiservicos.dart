@@ -4,20 +4,18 @@ import 'package:http/http.dart' as http;
 import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/constantes.dart';
 
-Future<Cliente> createCliente(
-    String name, String email, String password) async {
+Future<void> createCliente(String name, String email, String password) async {
   final response = await http.post(
       Uri.parse(
-        'https://jsonplaceholder.typicode.com/albums',
+        "http://localhost:3333/users",
       ),
       headers: <String, String>{
-        'HttpHeaders.contentTypeHeader': 'application/json',
+        'Content-Type': 'application/json; charset=UTF-8',
       },
-      body:
-          ClienteToJson(Cliente(name: name, email: email, password: password)));
-  if (response.statusCode == 201) {
-    return ClientefromJson(response.body);
-  } else {
-    throw Exception('falha em criar o cliente');
-  }
+      body: jsonEncode(<String, String>{
+        "name": name,
+        "email": email,
+        "password": password
+      }));
+  print(response.body);
 }

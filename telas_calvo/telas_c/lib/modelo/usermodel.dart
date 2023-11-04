@@ -4,9 +4,9 @@ Cliente ClientefromJson(String str) => Cliente.fromJson(json.decode(str));
 String ClienteToJson(Cliente data) => json.encode(data.toJson());
 
 class Cliente {
-  String name;
-  String email;
-  String password;
+  final String name;
+  final String email;
+  final String password;
 
   Cliente({
     required this.name,
@@ -15,9 +15,9 @@ class Cliente {
   });
 
   factory Cliente.fromJson(Map<String, dynamic> json) => Cliente(
-        name: json["name"],
-        email: json["email"],
-        password: json["password"],
+        name: json["name"] as String,
+        email: json["email"] as String,
+        password: json["password"] as String,
       );
 
   Map<String, dynamic> toJson() => {
