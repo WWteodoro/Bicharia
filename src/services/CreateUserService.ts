@@ -3,9 +3,10 @@ import { IUserCreateRequest } from "../interfaces/IUserInterfaces";
 import { IUserRepository } from "../interfaces/IUserRepository";
 import { validateEmail, validatePassword, validateConfirmEmail, validateConfirmPassword } from "../utils/validate";
 import { AppError } from "../errors/AppError";
+import { IHashRepository } from "../interfaces/IHashRepository";
 
 export class CreateUserService{
-    constructor(private userRepo: IUserRepository){}
+    constructor(private userRepo: IUserRepository, private hashRepo: IHashRepository){}
     async execute({ name, email, password, confirmEmail, confirmPassword}: IUserCreateRequest): Promise<void>{
         if (!validateEmail(email)){
             throw new AppError('Email inválido')
@@ -26,6 +27,9 @@ export class CreateUserService{
             throw new AppError('Email ou senha não são iguais')
         } 
     
+        password = await this.hashRepo.cryptographie(password);
+        confirmPassword = await this.hashRepo.cryptographie(password);
+
         const user = new User({name, email, password})
         await this.userRepo.insert(user.toJson())
         

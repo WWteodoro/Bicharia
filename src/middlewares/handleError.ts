@@ -9,9 +9,10 @@ export function handleError (err: Error, req: Request, res: Response, next: Next
     } else {
 
     res.status(500).json({
-        message: 'Internal Server Error - ${err.message}'
+        message: `Internal Server Error - ${err.message}`
     })
 }
-next()
+
+    next()
 
 }
