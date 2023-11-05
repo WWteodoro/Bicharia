@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
         drawer: Drawer(
           child: ListView(children: const <Widget>[
             DrawerHeader(
-                decoration: BoxDecoration(color: Colors.deepOrange),
+                decoration: BoxDecoration(color: Colors.orange),
                 child: Text('User Placeholder')),
             ListTile(
               title: Text('Perfil'),
@@ -35,10 +35,13 @@ class Home extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'home',
+            ),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.verified_user_rounded), label: 'profile'),
+                icon: Icon(Icons.account_circle), label: 'profile'),
           ],
         ));
   }

@@ -23,7 +23,11 @@ Content-Type: application/json
     "name": "up",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
+    "name": "Novo Nome",
+    "email": "novoemail@usuario.com",
+    "password": "NovaSenha123"
 }
 
-### Delete User
-DELETE http://localhost:3333/users/5e06cafc-644b-4f80-9ecb-e1f3dd1969fd
+### Excluir um Usuário por ID
+DELETE http://localhost:3333/users/
+# Substitua {{uuid}} pelo ID do usuário que vo

@@ -4,18 +4,22 @@ import 'package:http/http.dart' as http;
 import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/constantes.dart';
 
-Future<Cliente> createCliente(
-    String name, String email, String passoword) async {
+Future<void> createCliente(String name, String email, String password) async {
   final response = await http.post(
-      Uri.parse(ApiConstantsPost.baseUrl + ApiConstantsPost.usersEndpoint),
+      Uri.parse(
+        "http://localhost:3333/users",
+      ),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
-      body: ClienteToJson(
-          Cliente(name: name, email: email, password: passoword)));
+      body: jsonEncode(<String, String>{
+        "name": name,
+        "email": email,
+        "password": password
+      }));
   if (response.statusCode == 201) {
-    return Cliente.fromJson(jsonDecode(response.body));
+    print("O usuário foi cadastrado");
   } else {
-    throw Exception('Failed to create album.');
+    throw Exception('O requisitos não foram atendidios para criar o cliente');
   }
 }

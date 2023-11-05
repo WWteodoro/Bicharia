@@ -11,7 +11,6 @@ class CadastroPage extends StatelessWidget {
   final senha = TextEditingController();
   final confirmar = TextEditingController();
   final confirmacaoemail = TextEditingController();
-  Future<Cliente>? cliente;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,30 +119,20 @@ class CadastroPage extends StatelessWidget {
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.datetime,
-              controller: data,
-              decoration: const InputDecoration(
-                  labelText: "Data Nascimento",
-                  labelStyle: TextStyle(
-                      color: Colors.black38,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20)),
-            ),
-            const SizedBox(
               height: 40,
             ),
             GestureDetector(
               onTap: () {
                 if (email.text == confirmacaoemail.text &&
-                    confirmar.text == senha.text) {
-                  cliente = createCliente(nome.text, email.text, senha.text);
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
+                    confirmar.text == senha.text &&
+                    email.text != "" &&
+                    senha.text != "") {
+                  createCliente(nome.text, email.text, senha.text);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home()));
                 } else {
-                  print("ERROR");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CadastroPage()));
                 }
               },
               child: Container(
@@ -151,84 +140,14 @@ class CadastroPage extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
-                    color: Colors.yellow[500],
+                    color: Colors.orange,
                     borderRadius: BorderRadius.circular(180)),
                 child: const Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "C",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "A",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "D",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "A",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "S",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "T",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "A",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "R",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "-",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "S",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "E",
+                        "CADASTRAR-SE",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 30,

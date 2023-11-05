@@ -1,4 +1,8 @@
+import 'dart:ffi';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:telas_c/Pages/cadastropage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -13,9 +17,9 @@ class LoginPage extends StatelessWidget {
           children: [
             AppBar(
               leading: const IconButton(
-                onPressed: null,
                 icon: Icon(Icons.exit_to_app),
                 tooltip: "sair",
+                onPressed: null,
               ),
               title: const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -73,56 +77,34 @@ class LoginPage extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
-                  color: Colors.yellow[500],
+                  color: Colors.orange,
                   borderRadius: BorderRadius.circular(180),
                 ),
                 child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "L",
+                        "LOGIN",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 30,
                         ),
                       ),
-                      Text(
-                        "O",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "G",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "I",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "N",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      )
                     ]),
               ),
+            ),
+            const SizedBox(
+              height: 40,
             ),
             Container(
               height: 60,
               alignment: Alignment.center,
-              child: const ButtonBar(
-                alignment: MainAxisAlignment.center,
-                children: [Text("Cadastrar-se", textAlign: TextAlign.center)],
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CadastroPage()));
+                },
+                child: const Text("Cadastrar-se"),
               ),
             ),
           ],
