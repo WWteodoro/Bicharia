@@ -10,6 +10,16 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model pet {
+  id String @id
+  name String @db.VarChar(255)
+  type String @db.VarChar(255)
+  password String @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+
 model user {
   id String @id @db.Uuid
   name String @db.VarChar(255)
@@ -18,3 +28,4 @@ model user {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
+

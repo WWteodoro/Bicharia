@@ -1,0 +1,40 @@
+### Get Pets
+GET http://localhost:3333/pets
+
+### Create Pet
+POST http://localhost:3333/pets
+Content-Type: application/json
+
+{
+    "name": "Belinha",
+    "type": "Cachorro",
+    "password": "A1234567.a",
+    "confirmPassword": "A1234567.a"
+}
+
+### Update Pet ID
+PUT http://localhost:3333/pets/GpYMmsvuR1/update-id
+Content-Type: application/json
+
+{
+    "newId": "belinhaa"
+}
+
+### Update Pet Name
+PUT http://localhost:3333/pets/belinhaa/update-name
+Content-Type: application/json
+
+{
+    "newName": "Belinha"
+}
+
+### Update Pet Type
+PUT http://localhost:3333/pets/3jZL2ky3GN/update-type
+Content-Type: application/json
+
+{
+    "newType": "gato"
+}
+
+### Delete Pet
+DELETE http://localhost:3333/pets/xTvgbXTyPE
