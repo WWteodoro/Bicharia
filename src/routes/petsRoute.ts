@@ -1,13 +1,14 @@
 import { Request, Response, Router } from "express";
 import { IPets } from "../interfaces/IPetsInterfaces";
 import { PetsRepository } from "../repositories/PetRepository";
-import { CreatePetController } from "../routes/controllers/createPetController";
-import { DeletePetByIdController } from "../routes/controllers/deletePetByIdController";
-import { GetAllPetsController } from "../routes/controllers/getAllPetsController";
-import { UpdatePetIdController } from "../routes/controllers/updatePetIdController";
-import { UpdatePetNameController } from "../routes/controllers/updatePetNameController";
-import { UpdatePetTypeController } from "../routes/controllers/updatePetTypeController";
-import { GetPetByIdController } from "../routes/controllers/getPetByIdController";
+import { CreatePetController } from "./controllers/createPetController";
+import { DeletePetByIdController } from "./controllers/deletePetByIdController";
+import { GetAllPetsController } from "./controllers/getAllPetsController";
+import { GetPetByIdController } from "./controllers/getPetByIdController";
+import { UpdatePetIdController } from "./controllers/updatePetIdController";
+import { UpdatePetNameController } from "./controllers/updatePetNameController";
+import { UpdatePetTypeController } from "./controllers/updatePetTypeController";
+
 export const petsRoute = Router();
 
 const petsRepo = new PetsRepository();
