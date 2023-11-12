@@ -23,11 +23,17 @@ Content-Type: application/json
     "name": "up",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
-    "name": "Novo Nome",
-    "email": "novoemail@usuario.com",
-    "password": "NovaSenha123"
 }
 
 ### Excluir um Usuário por ID
 DELETE http://localhost:3333/users/
 # Substitua {{uuid}} pelo ID do usuário que vo
+
+### Authenticate User
+POST  http://localhost:3333/auth
+Content-Type: application/json
+
+{
+    "email": "novoemail@usuario.com",
+    "password": "NovaSenha123"
+}

@@ -12,6 +12,7 @@ export class AuthenticateUserService {
     ) { }
     
     async execute({email, password}: IUserAuthenticateRequest): Promise<Object | void> {
+        
         const user = await this.userRepo.findOneUser(email);
         
         if(user) {
