@@ -1,190 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:telas_c/componentes/Pets.dart';
+import 'package:telas_c/componentes/pet_title.dart';
+import 'package:telas_c/modelo/model_pet.dart';
+import 'package:telas_c/modelo/pet_exemplos.dart';
 
-class CadastroPetPage extends StatelessWidget {
-  CadastroPetPage({super.key});
-  final nomepet = TextEditingController();
-  final apelidopet = TextEditingController();
-  final tipopet = TextEditingController();
+class PetCadastros extends StatelessWidget {
+  PetCadastros({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final Pets pet_list = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
-        leading: const IconButton(
-          onPressed: null,
-          icon: Icon(Icons.home),
-          tooltip: "Home",
-          color: Colors.yellow,
-        ),
-        title: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-          Text(
-            "Cadastro do Pet",
-            style: TextStyle(fontSize: 30),
-          )
-        ]),
+        backgroundColor: Colors.deepOrange,
+        title: Text("PET CRIAR"),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                pet_list.put(Pet(
+                    id: "10",
+                    nome: "percival",
+                    tipo: "calaveiro morte",
+                    url:
+                        "https://www.petz.com.br/blog/wp-content/uploads/2019/05/cachorro-independente-1.jpg"));
+              },
+              icon: Icon(Icons.add))
+        ],
       ),
-      body: Container(
-        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: const Color.fromARGB(255, 255, 255, 255),
-        child: ListView(
-          children: [
-            const SizedBox(
-              width: 128,
-              height: 128,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.name,
-              decoration: const InputDecoration(
-                  labelText: "Nome do Pet",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
-              controller: nomepet,
-              style: const TextStyle(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.name,
-              decoration: const InputDecoration(
-                  labelText: "Apelido do Pet",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
-              controller: apelidopet,
-              style: const TextStyle(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            TextFormField(
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              controller: tipopet,
-              decoration: const InputDecoration(
-                labelText: "Tipo de Pet",
-                labelStyle: TextStyle(
-                  color: Colors.black38,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Container(
-                height: 50,
-                padding: const EdgeInsets.all(8),
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                decoration: BoxDecoration(
-                    color: Colors.yellow[500],
-                    borderRadius: BorderRadius.circular(180)),
-                child: const Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "P",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "E",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "T",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "-",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "R",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "E",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "G",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "I",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "S",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "T",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "A",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                      Text(
-                        "R",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontSize: 30,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: pet_list.count,
+          itemBuilder: (ctx, i) => PetTitle(pet_list.all.elementAt(i))),
     );
   }
 }

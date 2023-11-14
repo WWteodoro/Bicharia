@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/Pages/home.dart';
@@ -15,8 +16,11 @@ class CadastroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const IconButton(
-          onPressed: null,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LoginPage()));
+          },
           icon: Icon(Icons.login),
           tooltip: "login",
           color: Colors.yellow,

@@ -8,16 +8,19 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Home"),
-          actions: const <Widget>[
+          actions:  <Widget>[
             IconButton(
-              onPressed: null,
+              onPressed: (){
+
+              },
               icon: Icon(Icons.person),
             )
           ],
         ),
-        floatingActionButton: const FloatingActionButton(
-            onPressed:
-                null, // No futuro redirecionará para uma tela de "Tweetar"
+        floatingActionButton: FloatingActionButton(
+            onPressed:(){
+
+            }, // No futuro redirecionará para uma tela de "Tweetar"
             child: Icon(Icons.add)),
         drawer: Drawer(
           child: ListView(children: const <Widget>[
@@ -41,7 +44,8 @@ class Home extends StatelessWidget {
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.add), label: 'Tweet'
-                onPressed: () {Navigator.pushNamed(context, /add);}
+                onPressed: () {
+                  Navigator.pushNamed(context,);}
                 ),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
           ],

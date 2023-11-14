@@ -16,10 +16,12 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: [
             AppBar(
-              leading: const IconButton(
+              leading: IconButton(
                 icon: Icon(Icons.exit_to_app),
                 tooltip: "sair",
-                onPressed: null,
+                onPressed: () {
+                  exit(-1);
+                },
               ),
               title: const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
