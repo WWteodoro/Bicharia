@@ -1,8 +1,4 @@
-    import { v4 } from 'uuid'
-
-    export function createUUID(){
-        return uuid();
-    }
+import { v4 } from 'uuid'
 export function createUUID(){
     return v4();
 }

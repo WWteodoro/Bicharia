@@ -5,6 +5,7 @@ GET http://localhost:3333/users
 
 ### Get User
 GET http://localhost:3333/users/1ed5d227-7f6b-4ae5-88cc-b0f87c5dfaed
+
 ### Create User
 POST http://localhost:3333/users
 Content-Type: application/json
@@ -16,7 +17,7 @@ Content-Type: application/json
 }
 
 ### Update User
-PUT  http://localhost:3333/users/1ed5d227-7f6b-4ae5-88cc-b0f87c5dfaed
+PUT  http://localhost:3333/users/
 Content-Type: application/json
 
 {
@@ -29,5 +30,5 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/
+DELETE http://localhost:3333/users/488ded63-dab4-49a6-ae9a-1f58351c6701
 # Substitua {{uuid}} pelo ID do usuário que vo

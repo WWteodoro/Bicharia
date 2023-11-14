@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
@@ -15,12 +17,13 @@ class CadastroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const IconButton(
-          onPressed: null,
-          icon: Icon(Icons.login),
-          tooltip: "login",
-          color: Colors.yellow,
-        ),
+        actions: [
+          const IconButton(
+            onPressed: null,
+            icon: Icon(Icons.login),
+            color: Colors.yellow,
+          )
+        ],
         title: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           Text(
             "Cadastro",
@@ -147,7 +150,7 @@ class CadastroPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "CADASTRAR-SE",
+                        "CADASTRAR",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 30,

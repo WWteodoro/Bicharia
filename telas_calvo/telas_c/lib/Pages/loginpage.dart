@@ -3,10 +3,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/cadastropage.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
+
+final email = TextEditingController();
+final senha = TextEditingController();
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  void sair() {
+    exit(-1);
+  }
 
+  const LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +27,7 @@ class LoginPage extends StatelessWidget {
                 icon: Icon(Icons.exit_to_app),
                 tooltip: "sair",
                 onPressed: null,
+                splashRadius: 40.0,
               ),
               title: const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -43,6 +51,7 @@ class LoginPage extends StatelessWidget {
                     fontSize: 20,
                   )),
               style: const TextStyle(fontSize: 20),
+              controller: email,
             ),
             const SizedBox(
               height: 10,
@@ -50,6 +59,7 @@ class LoginPage extends StatelessWidget {
             TextFormField(
               keyboardType: TextInputType.text,
               obscureText: true,
+              controller: senha,
               decoration: const InputDecoration(
                 labelText: "Senha",
                 labelStyle: TextStyle(
@@ -71,9 +81,12 @@ class LoginPage extends StatelessWidget {
               height: 40,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                AutenticarUser(email.text, senha.text);
+              },
               child: Container(
                 height: 50,
+                width: 50,
                 padding: const EdgeInsets.all(8),
                 margin: const EdgeInsets.symmetric(horizontal: 8),
                 decoration: BoxDecoration(
