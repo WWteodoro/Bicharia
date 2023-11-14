@@ -8,4 +8,4 @@ export const route = express.Router();
 route.use('/', mainRouter)
 route.use('/users', userRoute)
 route.use('/pets', petsRoute)
-route.use('auth', userAuthenticateRoute)
+route.use('/auth', userAuthenticateRoute)
