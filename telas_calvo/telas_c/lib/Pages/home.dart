@@ -39,9 +39,11 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.home),
               label: 'home',
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), label: 'profile'),
+                icon: Icon(Icons.add), label: 'Tweet'
+                onPressed: () {Navigator.pushNamed(context, /add);}
+                ),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
           ],
         ));
   }
