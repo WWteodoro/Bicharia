@@ -15,7 +15,8 @@ model pet {
   name String @db.VarChar(255)
   type String @db.VarChar(255)
   password String @db.VarChar(255)
-  owner user[]
+  owners user[]
+  photo String @db.VarChar(255)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }
