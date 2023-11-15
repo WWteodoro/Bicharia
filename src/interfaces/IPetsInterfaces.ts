@@ -22,6 +22,8 @@ export interface IPetsGetRequest {
 
 export interface IPetsUpdateRequest{
     id: string;
+    newId?: string;
+    type: string;
     name: string;
     password: string;
     confirmPassword?: string;
