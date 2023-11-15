@@ -9,7 +9,10 @@ class PetTitle extends StatelessWidget {
     final avatar = CircleAvatar(backgroundImage: NetworkImage(dog.url));
     return ListTile(
         leading: avatar,
-        title: Text(dog.nome),
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [Text(dog.nome), Text(dog.id)],
+        ),
         subtitle: Text(dog.tipo),
         trailing: Container(
           width: 100,

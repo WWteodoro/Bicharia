@@ -17,10 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Bicharia',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: LoginPage());
+        home: PetCadastros());
   }
 }

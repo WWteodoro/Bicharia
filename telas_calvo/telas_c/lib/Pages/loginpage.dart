@@ -4,9 +4,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/cadastropage.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +27,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   exit(-1);
                 },
+                color: Colors.orange,
               ),
               title: const Row(
                   mainAxisAlignment: MainAxisAlignment.start,
