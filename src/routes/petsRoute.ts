@@ -8,6 +8,7 @@ import { GetPetByIdController } from "./controllers/GetPetByIdController";
 import { UpdatePetIdController } from "./controllers/UpdatePetIdController";
 import { UpdatePetNameController } from "./controllers/UpdatePetNameController";
 import { UpdatePetTypeController } from "./controllers/UpdatePetTypeController";
+import { IPetsRepository } from "../interfaces/IPetsRepository";
 
 
 export const petsRoute = Router();
