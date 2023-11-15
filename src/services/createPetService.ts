@@ -9,9 +9,7 @@ import shortid from 'shortid';
 export class CreatePetService {
     constructor(private petsRepo: IPetsRepository, private userRepo: IUserRepository) {}
 
-    async execute({ name, type, password, confirmPassword, photo, userId }: IPetsCreateRequest): Promise<void> {
-        const id = shortid.generate();
-
+    async execute({ name, type, password, confirmPassword, photo, owners }: IPetsCreateRequest): Promise<void> {
         if (!validatePassword(password)) {
             throw new AppError('A senha não atende aos requisitos');
         }
@@ -20,18 +18,14 @@ export class CreatePetService {
             throw new AppError('A confirmação de senha não é igual à senha');
         }
 
-        const user = await this.userRepo.findOneUser(userId);
-
-        if (!user) {
-            throw new AppError('Usuário não encontrado');
-        }
+        const id = shortid.generate();
 
         const novoPet = new Pet({
             name,
             type,
             password,
             photo,
-            owners: [user], 
+            owners: owners || [], 
         });
 
         await this.petsRepo.createPet(novoPet.toJson());

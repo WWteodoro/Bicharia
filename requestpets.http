@@ -6,26 +6,24 @@ POST http://localhost:3333/pets
 Content-Type: application/json
 
 {
-    "name": "Vó Cleusa",
-    "type": "Humano",
-    "password": "A1234567.a",
-    "confirmPassword": "A1234567.a",
-      "owners": [
-    {
-      "id": "be226d4b-f97d-43cd-af94-9aa8482d2b33",
-      "name": "User2",
-      "email": "calvo@calvo.calvo",
+  "name": "Vo Cleusa",
+  "type": "Humano",
+  "password": "A.1234567a",
+  "confirmPassword": "A.1234567a", 
+  "photo": "URLDaFotoDoPet",
+  "owners": {
+    "connect": {
+      "id": "d80f7a42-f905-488e-ab0c-ca787e5c4df1"
     }
-  ],
-   "photo": "https://example.com/pet-photo.jpg"
+  }
 }
 
 ### Update Pet ID
-PUT http://localhost:3333/pets/aDtvZdmcbv/updatePet
+PUT http://localhost:3333/pets/aatVnKKFZR/updatePet
 Content-Type: application/json
 
 {
-    "newId": "marmota"
+    "newId": "vovoCleusa"
 }
 
 ### Update Pet Name
@@ -45,4 +43,4 @@ Content-Type: application/json
 }
 
 ### Delete Pet
-DELETE http://localhost:3333/pets/xTvgbXTyPE
+DELETE http://localhost:3333/pets/Yj668suiFD

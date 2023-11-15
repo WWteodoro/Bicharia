@@ -19,7 +19,7 @@ export interface IPetsCreateRequest{
     confirmPassword?: string;
     photo: string;
     owners?: IUser[];
-    userId: string;
+
 }
 
 

@@ -7,9 +7,14 @@ const prisma = new PrismaClient();
 export class PetsRepository implements IPetsRepository {
 
   async findAll(): Promise<IPets[]> {
-    const result = await prisma.pet.findMany()
-    return result
-}
+    const result = await prisma.pet.findMany({
+      include: {
+        owners: true,
+      },
+    });
+    return result;
+  }
+
 
 async findOnePet(id: string): Promise<IPets>{
   const result = await prisma.pet.findUnique({
