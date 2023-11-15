@@ -1,10 +1,13 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:telas_c/Pages/cadastroPet.dart';
+import 'package:telas_c/componentes/Pets.dart';
 
 import 'Pages/loginpage.dart';
 import 'Pages/cadastropage.dart';
-import 'Pages/cadastroPet.dart';
+import "Pages/cadastropage.dart";
 import 'Pages/home.dart';
 
 void main() => runApp(const MyApp());
@@ -14,9 +17,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Bicharia',
-        debugShowCheckedModeBanner: false,
-        home: PetCadastros());
+    return MultiProvider(
+        providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
+        child: MaterialApp(
+          title: 'Bicharia',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: CadastroPage(),
+        ));
   }
 }

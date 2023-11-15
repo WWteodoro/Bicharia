@@ -5,14 +5,7 @@ import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/Pages/home.dart';
 
-class CadastroPage extends StatefulWidget {
-  const CadastroPage({super.key});
-
-  @override
-  State<CadastroPage> createState() => _CadastroPageState();
-}
-
-class _CadastroPageState extends State<CadastroPage> {
+class CadastroPage extends StatelessWidget {
   final nome = TextEditingController();
   final email = TextEditingController();
   final data = TextEditingController();
@@ -24,19 +17,20 @@ class _CadastroPageState extends State<CadastroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orange,
         leading: IconButton(
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => LoginPage()));
           },
+          color: Colors.white,
           icon: Icon(Icons.login),
           tooltip: "login",
-          color: Colors.orange,
         ),
         title: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
           Text(
             "Cadastro",
-            style: TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 30, color: Colors.white),
           )
         ]),
       ),
@@ -47,12 +41,9 @@ class _CadastroPageState extends State<CadastroPage> {
           child: ListView(
             children: [
               SizedBox(
-                width: 128,
-                height: 128,
+                width: 250,
+                height: 250,
                 child: Image.asset("assets/imagens/logo.jpeg"),
-              ),
-              const SizedBox(
-                height: 20,
               ),
               TextFormField(
                 keyboardType: TextInputType.name,
@@ -172,9 +163,7 @@ class _CadastroPageState extends State<CadastroPage> {
                     );
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Campos Inválidos'),
-                      ),
+                      const SnackBar(content: Text('Informações invalidas')),
                     );
                   }
                 },

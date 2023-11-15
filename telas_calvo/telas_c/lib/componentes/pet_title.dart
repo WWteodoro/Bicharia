@@ -9,17 +9,25 @@ class PetTitle extends StatelessWidget {
     final avatar = CircleAvatar(backgroundImage: NetworkImage(dog.url));
     return ListTile(
         leading: avatar,
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text(dog.nome), Text(dog.id)],
-        ),
+        title: Text(dog.nome),
         subtitle: Text(dog.tipo),
         trailing: Container(
           width: 100,
           child: Row(
             children: <Widget>[
-              IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.delete))
+              Text(dog.id),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.edit),
+                tooltip: "Editar",
+                splashRadius: 20.0,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.delete),
+                tooltip: "Deletar",
+                splashRadius: 20.0,
+              )
             ],
           ),
         ));
