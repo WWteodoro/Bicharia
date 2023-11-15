@@ -8,6 +8,7 @@ export class User{
     password: IUser['password'];
     confirmEmail: IUser['confirmEmail'];
     confirmPassword: IUser['confirmPassword'];
+    pets: IUser['pets']
     createdAt: IUser['createdAt'];
     updatedAt: IUser['updatedAt'];
 
@@ -18,6 +19,7 @@ export class User{
         this.password = props.password;
         this.confirmEmail = props.confirmEmail;
         this.confirmPassword = props.confirmPassword;
+        this.pets = props.pets;
         this.createdAt = props.createdAt || new Date();
         this.updatedAt = new Date();
     }
@@ -30,6 +32,7 @@ export class User{
             password: this.password,
             confirmEmail: this.confirmEmail,
             confirmPassword: this.confirmPassword,
+            pets: this.pets,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt
                 

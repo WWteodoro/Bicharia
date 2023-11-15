@@ -20,10 +20,10 @@ async findOnePet(id: string): Promise<IPets>{
   return result
 }
 
-async createPet(props: IPets): Promise<void> {
-  const createdPet = await prisma.pet.create({
-    data: props
-  });
+async createPet(props: Omit<IPets, 'owners'>, owners?: string ): Promise<void> {
+    await prisma.pet.create({
+      data: props
+  })
 }
 
 

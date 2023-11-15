@@ -8,7 +8,7 @@ import shortid from 'shortid';
 export class CreatePetService {
     constructor(private petsRepo: IPetsRepository) {}
 
-    async execute({name, type, password, confirmPassword }: IPetsCreateRequest): Promise<void> {
+    async execute({name, type, password, confirmPassword, owners, photo }: IPetsCreateRequest): Promise<void> {
         const id = shortid.generate();
         if (!validatePassword(password)) {
             throw new AppError('A senha não atende os requisitos');
@@ -18,7 +18,7 @@ export class CreatePetService {
             throw new AppError('A confirmação de senha não é igual à senha');
         }
 
-        const novoPet = new Pet({name, type, password})
+        const novoPet = new Pet({name, type, password, owners, photo})
         await this.petsRepo.createPet(novoPet.toJson())
 }
 }

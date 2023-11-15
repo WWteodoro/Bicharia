@@ -1,9 +1,13 @@
+import { IUser } from "./IUserInterfaces";
+
 export interface IPets {
     id: string;
     name: string;
     type: string;
+    owners?: IUser[];
     password: string;
     confirmPassword?: string;
+    photo?: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -13,6 +17,8 @@ export interface IPetsCreateRequest{
     type: string;
     password: string;
     confirmPassword?: string;
+    photo: string;
+    owners: IUser[];
 }
 
 
@@ -27,6 +33,7 @@ export interface IPetsUpdateRequest{
     name: string;
     password: string;
     confirmPassword?: string;
+    photo: string;
 }
 
 export interface IPetsDeleteRequest{
