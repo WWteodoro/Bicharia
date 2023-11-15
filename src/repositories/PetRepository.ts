@@ -43,7 +43,7 @@ async createPet(props: Omit<IPets, 'owners'>, owners?: string ): Promise<void> {
     return await prisma.pet.findMany();
   }
 
-  async updatePet(props: IPets, id: string): Promise<void> {
+  async updatePet(props: Omit<IPets, 'owners'> , id: string): Promise<void> {
     await prisma.pet.update({
         where: { id },
         data: props

@@ -7,7 +7,7 @@ export interface IPets {
     owners?: IUser[];
     password: string;
     confirmPassword?: string;
-    photo?: string;
+    photo: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
