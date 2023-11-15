@@ -22,7 +22,7 @@ Content-Type: application/json
 {
     "name": "up",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a"
+    "password": "A1234567.a",
     "name": "Novo Nome",
     "email": "novoemail@usuario.com",
     "password": "NovaSenha123"

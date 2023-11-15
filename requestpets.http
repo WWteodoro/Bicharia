@@ -6,10 +6,18 @@ POST http://localhost:3333/pets
 Content-Type: application/json
 
 {
-    "name": "Belinha",
-    "type": "Cachorro",
+    "name": "Vó Cleusa",
+    "type": "Humano",
     "password": "A1234567.a",
-    "confirmPassword": "A1234567.a"
+    "confirmPassword": "A1234567.a",
+      "owners": [
+    {
+      "id": "be226d4b-f97d-43cd-af94-9aa8482d2b33",
+      "name": "User2",
+      "email": "calvo@calvo.calvo",
+    }
+  ],
+   "photo": "https://example.com/pet-photo.jpg"
 }
 
 ### Update Pet ID
