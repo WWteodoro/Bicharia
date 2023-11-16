@@ -61,14 +61,6 @@ class CadastroPage extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Campo vazio";
-                  }
-                  if (value.contains("@")) {
-                    return "Falta @";
-                  }
-                },
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
                     labelText: "E-mail",
@@ -100,15 +92,6 @@ class CadastroPage extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Campo Vazio";
-                  }
-                  if (value.contains(RegExp(
-                      '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})'))) {
-                    return "senha inválida";
-                  }
-                },
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 controller: senha,
@@ -126,15 +109,6 @@ class CadastroPage extends StatelessWidget {
                 height: 10,
               ),
               TextFormField(
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return "Campo Vazio";
-                  }
-                  if (value.contains(RegExp(
-                      '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})'))) {
-                    return "senha inválida";
-                  }
-                },
                 keyboardType: TextInputType.text,
                 controller: confirmar,
                 obscureText: true,

@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Bicharia',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
