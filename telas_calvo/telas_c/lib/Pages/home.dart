@@ -8,28 +8,28 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Home"),
-          actions: const <Widget>[
+          actions: <Widget>[
             IconButton(
-              onPressed: null,
+              onPressed: () {},
               icon: Icon(Icons.person),
             )
           ],
         ),
-        floatingActionButton: const FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
             onPressed:
-                null, // No futuro redirecionará para uma tela de "Tweetar"
+                () {}, // No futuro redirecionará para uma tela de "Tweetar"
             child: Icon(Icons.add)),
         drawer: Drawer(
-          child: ListView(children: const <Widget>[
+          child: ListView(children: <Widget>[
             DrawerHeader(
                 decoration: BoxDecoration(color: Colors.orange),
                 child: Text('User Placeholder')),
             ListTile(
               title: Text('Perfil'),
               //Route futura para perfil
-              //onTap: () {
-              //  Navigator.pushNamed(context,routeName)
-              //},
+              onTap: () {
+                //  Navigator.pushNamed(context,routeName)
+              },
             ),
           ]),
         ),
@@ -39,9 +39,10 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.home),
               label: 'home',
             ),
+            BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Tweet'
+                // onPressed: () {Navigator.pushNamed(context,);}
+                ),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle), label: 'profile'),
           ],
         ));
   }

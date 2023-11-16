@@ -9,11 +9,6 @@ final email = TextEditingController();
 final senha = TextEditingController();
 
 class LoginPage extends StatelessWidget {
-  void sair() {
-    exit(-1);
-  }
-
-  const LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +18,13 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: [
             AppBar(
-              leading: const IconButton(
+              leading: IconButton(
                 icon: Icon(Icons.exit_to_app),
                 tooltip: "sair",
-                onPressed: null,
+                onPressed: () {
+                  exit(-1);
+                },
+                color: Colors.orange,
                 splashRadius: 40.0,
               ),
               title: const Row(

@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/componentes/Pets.dart';
+import 'package:provider/provider.dart';
+import 'package:telas_c/Pages/cadastroPet.dart';
+import 'package:telas_c/componentes/Pets.dart';
 
 import 'Pages/loginpage.dart';
 import 'Pages/cadastropage.dart';
+import "Pages/cadastropage.dart";
 import "Pages/cadastropage.dart";
 import 'Pages/home.dart';
 
@@ -25,6 +29,6 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: false,
             ),
-            home: PetCadastros()));
+            home: LoginPage()));
   }
 }
