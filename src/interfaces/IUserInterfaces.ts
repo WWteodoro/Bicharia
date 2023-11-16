@@ -1,3 +1,5 @@
+import { IPets } from "./IPetsInterfaces";
+
 export interface IUser {
     id: string;
     name: string;
@@ -5,6 +7,7 @@ export interface IUser {
     password: string;
     confirmEmail?: string;
     confirmPassword?: string;
+    pets?: IPets[];
     createdAt?: Date;
     updatedAt?: Date;
 }
