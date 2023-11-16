@@ -23,3 +23,11 @@ Future<void> createCliente(String name, String email, String password) async {
     throw Exception('O requisitos não foram atendidios para criar o cliente');
   }
 }
+
+Future<void> AutenticarUser(String email, String password) async {
+  final resposta = await http.post(Uri.parse(""),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8'
+      },
+      body: jsonEncode(<String, String>{"email": email, "password": password}));
+}
