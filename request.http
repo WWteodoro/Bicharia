@@ -11,7 +11,7 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-    "name": "User2",
+    "name": "calvo",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
 }
@@ -23,12 +23,14 @@ Content-Type: application/json
 {
     "name": "up",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a"
+    "password": "A1234567.a",
     "name": "Novo Nome",
     "email": "novoemail@usuario.com",
     "password": "NovaSenha123"
 }
 
 ### Excluir um Usuário por ID
+
+DELETE http://localhost:3333/users/a937ad56-1e25-4902-b516-9c6ee844b5e2s
+
 DELETE http://localhost:3333/users/488ded63-dab4-49a6-ae9a-1f58351c6701
-# Substitua {{uuid}} pelo ID do usuário que vo
