@@ -15,24 +15,8 @@ class PetTitle extends StatelessWidget {
           width: 100,
           child: Row(
             children: <Widget>[
-<<<<<<< HEAD
               IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
               IconButton(onPressed: () {}, icon: Icon(Icons.delete))
-=======
-              Text(dog.id),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.edit),
-                tooltip: "Editar",
-                splashRadius: 20.0,
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.delete),
-                tooltip: "Deletar",
-                splashRadius: 20.0,
-              )
->>>>>>> origin/telas
             ],
           ),
         ));

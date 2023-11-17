@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
             title: 'Bicharia',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: false,
+              useMaterial3: true,
             ),
             home: LoginPage()));
   }
