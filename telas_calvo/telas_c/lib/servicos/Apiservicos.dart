@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/modelo/usermodel.dart';
-import 'package:telas_c/constantes.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
 
 Future<void> createCliente(String name, String email, String password) async {
   final response = await http.post(
@@ -31,4 +32,13 @@ Future<void> AutenticarUser(String email, String password) async {
       },
       body: jsonEncode(<String, String>{"email": email, "password": password}));
   print(resposta.body);
+}
+
+Future<void> Deletar_user(String id) async {
+  final http.Response response = await http.delete(
+    Uri.parse('http://localhost:3333/users/' + id),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+  );
 }

@@ -8,11 +8,11 @@ import 'package:telas_c/Pages/approute/AppRoute.dart';
 import 'package:telas_c/Pages/cadastroPet.dart';
 import 'package:telas_c/Pages/cadastropage.dart';
 import 'package:telas_c/Pages/home.dart';
-import 'package:telas_c/Profile.dart';
+import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/approute/AppRoute.dart';
 import 'package:telas_c/componentes/Pets.dart';
-import 'package:telas_c/componentes/Pets.dart';
 import 'Pages/loginpage.dart';
+import 'package:telas_c/Pages/Profile.dart';
 
 void main() => runApp(const MyApp());
 
