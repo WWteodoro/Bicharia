@@ -1,40 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:telas_c/componentes/Pets.dart';
-import 'package:telas_c/modelo/model_pet.dart';
 
-class AdicionarAnimal extends StatelessWidget {
-  const AdicionarAnimal({super.key});
+class Editar_animal extends StatelessWidget {
+  const Editar_animal({super.key});
   @override
   Widget build(BuildContext context) {
     final url = TextEditingController();
-    final senha = TextEditingController();
-    final senha_confirmar = TextEditingController();
     final nome = TextEditingController();
     final tipo = TextEditingController();
-    final Map<String, String> _formData = {};
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
           title: Text(
-            "Criar Pet",
+            "Editar Pet",
           ),
           backgroundColor: Colors.orange,
           actions: [
-            IconButton(
-                onPressed: () {
-                  final val = _form.currentState?.validate();
-                  if (val == null || val == true) {
-                    _form.currentState?.save();
-                    Provider.of(context, listen: false).put(Pet(
-                        id: "",
-                        nome: nome.text,
-                        tipo: tipo.text,
-                        url: url.text));
-                    Navigator.of(context).pop();
-                  }
-                },
-                icon: Icon(Icons.save_alt_outlined))
+            IconButton(onPressed: () {}, icon: Icon(Icons.save_alt_outlined))
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),
@@ -70,24 +51,6 @@ class AdicionarAnimal extends StatelessWidget {
                         }
                         return null;
                       }),
-                  TextFormField(
-                      controller: senha,
-                      decoration: InputDecoration(labelText: "Senha"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      }),
-                  TextFormField(
-                      controller: senha,
-                      decoration: InputDecoration(labelText: "Senha Confirmar"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      })
                 ],
               ))),
     );

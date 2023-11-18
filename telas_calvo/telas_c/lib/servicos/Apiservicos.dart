@@ -25,9 +25,10 @@ Future<void> createCliente(String name, String email, String password) async {
 }
 
 Future<void> AutenticarUser(String email, String password) async {
-  final resposta = await http.post(Uri.parse(""),
+  final resposta = await http.post(Uri.parse("http://localhost:3333/auth"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8'
       },
       body: jsonEncode(<String, String>{"email": email, "password": password}));
+  print(resposta.body);
 }

@@ -1,4 +1,5 @@
-class ApiConstantsPost {
-  static String baseUrl = "http://localhost:3333";
-  static String usersEndpoint = '/users';
+class Dados_user_autenticado {
+  static late String id;
+  static late String nome;
+  static late String email;
 }

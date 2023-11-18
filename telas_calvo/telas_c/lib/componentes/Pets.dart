@@ -5,7 +5,7 @@ import 'package:telas_c/modelo/model_pet.dart';
 import 'package:telas_c/modelo/pet_exemplos.dart';
 
 class Pets with ChangeNotifier {
-  final Map<String, Pet> _itemns = {...MEU_PET};
+  final _itemns = {...MEU_PET};
   List<Pet> get all {
     return [..._itemns.values];
   }
@@ -21,6 +21,5 @@ class Pets with ChangeNotifier {
     final id = Random().nextDouble().toString();
     _itemns.putIfAbsent(
         id, () => Pet(id: id, nome: pet.nome, tipo: pet.tipo, url: pet.url));
-    notifyListeners();
   }
 }

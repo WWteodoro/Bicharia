@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:telas_c/componentes/Pets.dart';
 import 'package:telas_c/componentes/pet_title.dart';
 import 'package:telas_c/modelo/model_pet.dart';
-import 'package:telas_c/modelo/pet_exemplos.dart';
 
 class PetCadastros extends StatelessWidget {
   PetCadastros({super.key});
@@ -13,7 +12,7 @@ class PetCadastros extends StatelessWidget {
     final Pets pet_list = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.orange,
         title: Text("PET CRIAR"),
         actions: <Widget>[
           IconButton(

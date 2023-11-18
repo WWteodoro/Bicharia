@@ -2,17 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telas_c/Pages/cadastropet.dart';
-import 'package:telas_c/componentes/Pets.dart';
-import 'package:provider/provider.dart';
+import 'package:telas_c/Pages/Pet_editar.dart';
+import 'package:telas_c/Pages/Petadicionar.dart';
+import 'package:telas_c/Pages/approute/AppRoute.dart';
 import 'package:telas_c/Pages/cadastroPet.dart';
+import 'package:telas_c/Pages/cadastropage.dart';
+import 'package:telas_c/Pages/home.dart';
+import 'package:telas_c/Profile.dart';
+import 'package:telas_c/approute/AppRoute.dart';
 import 'package:telas_c/componentes/Pets.dart';
-
+import 'package:telas_c/componentes/Pets.dart';
 import 'Pages/loginpage.dart';
-import 'Pages/cadastropage.dart';
-import "Pages/cadastropage.dart";
-import "Pages/cadastropage.dart";
-import 'Pages/home.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,11 +24,16 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
         child: MaterialApp(
-            title: 'Bicharia',
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            home: LoginPage()));
+          title: 'Bicharia',
+          home: Profile(),
+          routes: {
+            Routaaas.Animal_Cadastro: (_) => const PetCadastros(),
+            Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
+            Routaaas.Home: (_) => Home(),
+            Routaaas.Login: (_) => LoginPage(),
+            Routaaas.Cadastro_user: (_) => CadastroPage(),
+            Routaaas.Animal_editar: (_) => Editar_animal()
+          },
+        ));
   }
 }

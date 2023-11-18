@@ -12,28 +12,32 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        leading: IconButton(
+          icon: Icon(Icons.exit_to_app),
+          tooltip: "sair",
+          onPressed: () {
+            exit(-1);
+          },
+          color: Colors.white,
+          splashRadius: 40.0,
+        ),
+        title: const Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+          Text(
+            "Login",
+            style: TextStyle(fontSize: 30, color: Colors.white),
+          )
+        ]),
+      ),
       body: Container(
         padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         color: const Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: [
-            AppBar(
-              leading: IconButton(
-                icon: Icon(Icons.exit_to_app),
-                tooltip: "sair",
-                onPressed: () {
-                  exit(-1);
-                },
-                color: Colors.orange,
-                splashRadius: 40.0,
-              ),
-              title: const Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [Text("Login")]),
-            ),
             SizedBox(
-              width: 128,
-              height: 128,
+              width: 250,
+              height: 250,
               child: Image.asset("assets/imagens/logo.jpeg"),
             ),
             const SizedBox(
@@ -115,7 +119,10 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => CadastroPage()));
                 },
-                child: const Text("Cadastrar-se"),
+                child: const Text(
+                  "Cadastrar-se",
+                  style: TextStyle(color: Colors.orange),
+                ),
               ),
             ),
           ],
