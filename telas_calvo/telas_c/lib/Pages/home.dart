@@ -11,14 +11,13 @@ class Home extends StatelessWidget {
           title: const Text("Home"),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                 );
-              }
-            )
+                icon: Icon(Icons.logout),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                })
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -31,14 +30,13 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.orange),
                 child: Text('User Placeholder')),
             ListTile(
-              title: Text('Perfil'),
-              onTap: () {
-                //Navigator.push(
+                title: Text('Perfil'),
+                onTap: () {
+                  //Navigator.push(
                   //context,
                   //MaterialPageRoute(builder: (context) => const ()),
-                 //);
-              }
-            ),
+                  //);
+                }),
           ]),
         ),
         bottomNavigationBar: BottomNavigationBar(
