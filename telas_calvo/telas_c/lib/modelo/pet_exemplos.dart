@@ -15,7 +15,7 @@ const MEU_PET = {
       url:
           "https://www.petz.com.br/blog/wp-content/uploads/2019/05/cachorro-independente-1.jpg"),
   "3": Pet(
-      id: "3",
+      id: "1",
       nome: "Eren",
       tipo: "TITAN BESTIAL",
       url:

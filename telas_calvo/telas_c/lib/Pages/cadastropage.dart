@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:telas_c/Pages/loginpage.dart';
@@ -50,7 +52,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                     labelText: "Nome",
                     labelStyle: TextStyle(
-                      color: Colors.black38,
+                      color: Colors.black87,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                     )),
@@ -65,7 +67,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                     labelText: "E-mail",
                     labelStyle: TextStyle(
-                      color: Colors.black38,
+                      color: Colors.black87,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                     )),
@@ -81,7 +83,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "E-mail Confirmação",
                   labelStyle: TextStyle(
-                    color: Colors.black38,
+                    color: Colors.black87,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),
@@ -98,7 +100,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "Senha",
                   labelStyle: TextStyle(
-                    color: Colors.black38,
+                    color: Colors.black87,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),
@@ -115,7 +117,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "Senha confirmacao",
                   labelStyle: TextStyle(
-                    color: Colors.black38,
+                    color: Colors.black87,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),

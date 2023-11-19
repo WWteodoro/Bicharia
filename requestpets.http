@@ -1,0 +1,46 @@
+### Get Pets
+GET http://localhost:3333/pets
+
+### Create Pet
+POST http://localhost:3333/pets
+Content-Type: application/json
+
+{
+  "name": "Vo Cleusa",
+  "type": "Humano",
+  "password": "A.1234567a",
+  "confirmPassword": "A.1234567a", 
+  "photo": "URLDaFotoDoPet",
+  "owners": {
+    "connect": {
+      "id": "82e43531-2e66-43fb-9373-7e34dce5d2a8"
+    }
+  }
+}
+
+### Update Pet ID
+PUT http://localhost:3333/pets/aatVnKKFZR/updatePet
+Content-Type: application/json
+
+{
+    "newId": "vovoCleusa"
+}
+
+### Update Pet Name
+PUT http://localhost:3333/pets/marmota/updatePet
+Content-Type: application/json
+
+{
+    "name": "marmota"
+}
+
+### Update Pet Type
+PUT http://localhost:3333/pets/marmota/updatePet
+Content-Type: application/json
+
+{
+    "type": "marmota"
+}
+
+### Delete Pet
+DELETE http://localhost:3333/pets/Yj668suiFD

@@ -1,31 +1,33 @@
-POST http://localhost:3333/users
-Content-Type: application/json
+GET http://localhost:3333/
 
-{
-    "name": "Calvo calvo",
-    "email": "exemplo@usuario.com",
-    "password": "Senha123.",
-    "confirmEmail": "exemplo@usuario.com",
-    "confirmPassword": "Senha123."
-}
-
-### Obter todos os Usuários
+### Get Users
 GET http://localhost:3333/users
 
-### Obter um Usuário por ID
-GET http://localhost:3333/users/244ad3fe-4e5f-4d74-9c8b-2c21cb5bebc2
-# Substitua {{uuid}} pelo ID do usuário que você deseja obter.
+### Get User
+GET http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
 
-### Atualizar um Usuário por ID
-PUT http://localhost:3333/users/244ad3fe-4e5f-4d74-9c8b-2c21cb5bebc2
+### Create User
+POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "Novo Nome",
-    "email": "novoemail@usuario.com",
-    "password": "NovaSenha123"
+    "name": "calvo555",
+    "email": "calvo@calvo.calvo",
+    "password": "A1234567.a"
+}
+
+### Update User
+PUT http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
+Content-Type: application/json
+
+{
+    "name": "Novo N555ome",
+    "email": "novoemail@calvo.com",
+    "password": "NovaSenha123.a",
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/
-# Substitua {{uuid}} pelo ID do usuário que vo
+
+DELETE http://localhost:3333/users/a937ad56-1e25-4902-b516-9c6ee844b5e2s
+
+DELETE http://localhost:3333/users/488ded63-dab4-49a6-ae9a-1f58351c6701
