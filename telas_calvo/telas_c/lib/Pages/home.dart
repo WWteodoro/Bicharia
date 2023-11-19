@@ -22,6 +22,7 @@ class Home extends StatelessWidget {
               }
             )
           ],
+          backgroundColor: Colors.orange,
         ),
         drawer: Drawer(
           child: ListView(children: <Widget>[
@@ -43,7 +44,7 @@ class Home extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AdicionarAnimal()),
-                )
+                );
               }
             )
           ]),
@@ -52,12 +53,12 @@ class Home extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'home',
+              label: 'Home',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Tweet'
                 // onPressed: () {Navigator.pushNamed(context,);}
                 ),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           ],
         ));
   }

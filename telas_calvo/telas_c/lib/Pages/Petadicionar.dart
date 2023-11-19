@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
-import 'package:telas_c/componentes/Pets.dart';
-import 'package:telas_c/modelo/model_pet.dart';
 
 class AdicionarAnimal extends StatelessWidget {
   const AdicionarAnimal({super.key});
