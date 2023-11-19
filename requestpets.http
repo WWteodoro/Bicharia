@@ -13,7 +13,7 @@ Content-Type: application/json
   "photo": "URLDaFotoDoPet",
   "owners": {
     "connect": {
-      "id": "d80f7a42-f905-488e-ab0c-ca787e5c4df1"
+      "id": "82e43531-2e66-43fb-9373-7e34dce5d2a8"
     }
   }
 }

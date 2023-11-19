@@ -4,29 +4,26 @@ GET http://localhost:3333/
 GET http://localhost:3333/users
 
 ### Get User
-GET http://localhost:3333/users/1ed5d227-7f6b-4ae5-88cc-b0f87c5dfaed
+GET http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
 
 ### Create User
-POST http://localhost:3333/users
+POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "calvo",
+    "name": "calvo555",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
 }
 
 ### Update User
-PUT  http://localhost:3333/users/
+PUT http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
 Content-Type: application/json
 
 {
-    "name": "up",
-    "email": "calvo@calvo.calvo",
-    "password": "A1234567.a",
-    "name": "Novo Nome",
-    "email": "novoemail@usuario.com",
-    "password": "NovaSenha123"
+    "name": "Novo N555ome",
+    "email": "novoemail@calvo.com",
+    "password": "NovaSenha123.a",
 }
 
 ### Excluir um Usuário por ID

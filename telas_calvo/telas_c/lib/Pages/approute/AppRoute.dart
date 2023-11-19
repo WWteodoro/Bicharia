@@ -4,5 +4,6 @@ class Routaaas {
   static String Home = "/Home";
   static String Cadastro_user = "/cadastrio_user";
   static String Login = "/login";
-  static String Animal_editar = "/Animal_editar_...";
+  static String Animal_editar = "/Animal_editar_";
+  static String Profile = "/profile";
 }

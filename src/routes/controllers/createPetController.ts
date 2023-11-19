@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { CreatePetService } from '../../services/CreatePetService'; 
 import { IPetsRepository } from '../../interfaces/IPetsRepository'; 
 import { IUserRepository } from '../../interfaces/IUserRepository'; 
+import { CreatePetService } from '../../services/createPetService';
 
 export class CreatePetController {
     private createPetService: CreatePetService;

@@ -2,12 +2,12 @@ import { Request, Response, Router } from "express";
 import { IPets } from "../interfaces/IPetsInterfaces";
 import { UserRepository } from "../repositories/UserRepository";
 import { PetsRepository } from "../repositories/PetRepository";
-import { CreatePetController } from "./controllers/CreatePetController";
-import { DeletePetByIdController } from "./controllers/DeletePetByIdController";
-import { GetAllPetsController } from "./controllers/GetAllPetsController";
 import { UpdatePetController } from "./controllers/UpdatePetController";
-import { GetPetByIdController } from "./controllers/GetPetByIdController";
 import { CreateUserController } from "./controllers/CreateUserController";
+import { CreatePetController } from "./controllers/createPetController";
+import { DeletePetByIdController } from "./controllers/deletePetByIdController";
+import { GetAllPetsController } from "./controllers/getAllPetsController";
+import { GetPetByIdController } from "./controllers/getPetByIdController";
 export const petsRoute = Router();
 
 const petsRepo = new PetsRepository();

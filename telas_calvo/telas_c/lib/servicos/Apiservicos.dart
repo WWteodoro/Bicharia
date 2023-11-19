@@ -42,3 +42,23 @@ Future<void> Deletar_user(String id) async {
     },
   );
 }
+
+Future<int> Update_user_data(
+    String id, String nome, String email, String password) async {
+  final response =
+      await http.put(Uri.parse('http://localhost:3333/users/' + id),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+          body: jsonEncode(<String, String>{
+            'name': nome,
+            'email': email,
+            'passoword': password,
+          }));
+  if (response.statusCode == 200) {
+    Dados_Usuario.email = email;
+    Dados_Usuario.nome = nome;
+    return 1;
+  }
+  return 0;
+}

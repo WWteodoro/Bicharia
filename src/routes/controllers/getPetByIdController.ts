@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { IPetsRepository } from "../../interfaces/IPetsRepository";
-import { GetPetByIdService } from "../../services/GetPetByIdService";
+import { GetPetByIdService } from "../../services/getPetByIdService";
+
 
 export class GetPetByIdController {
     constructor(private petsRepo: IPetsRepository) {}

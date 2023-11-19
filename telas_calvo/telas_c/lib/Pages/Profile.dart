@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/approute/AppRoute.dart';
+import 'package:telas_c/Pages/editar_user.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import "package:telas_c/servicos/Apiservicos.dart";
 
@@ -57,7 +58,15 @@ class _MinhaPaginaState extends State<Profile> {
             height: 20,
           ),
           CircleAvatar(
-            child: Icon(color: Colors.white, Icons.person, size: 75),
+            child: IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.person),
+              iconSize: 75,
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Editar_Users()));
+              },
+            ),
             radius: 75,
             backgroundColor: Colors.orange,
           ),
@@ -77,6 +86,9 @@ class _MinhaPaginaState extends State<Profile> {
               meu_nome,
               style: TextStyle(fontSize: 16),
             ),
+          ),
+          SizedBox(
+            height: 40,
           ),
         ],
       ),
