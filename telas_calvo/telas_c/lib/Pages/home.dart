@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telas_c/Pages/loginpage.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,8 +11,13 @@ class Home extends StatelessWidget {
           title: const Text("Home"),
           actions: <Widget>[
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                 );
+              }
             )
           ],
         ),
@@ -26,10 +32,12 @@ class Home extends StatelessWidget {
                 child: Text('User Placeholder')),
             ListTile(
               title: Text('Perfil'),
-              //Route futura para perfil
               onTap: () {
-                //  Navigator.pushNamed(context,routeName)
-              },
+                //Navigator.push(
+                  //context,
+                  //MaterialPageRoute(builder: (context) => const ()),
+                 //);
+              }
             ),
           ]),
         ),
