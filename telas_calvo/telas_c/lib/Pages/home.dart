@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/loginpage.dart';
+import 'package:telas_c/Pages/profile.dart';
+import 'package:telas_c/Pages/Petadicionar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -15,16 +17,12 @@ class Home extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  MaterialPageRoute(builder: (context) =>  LoginPage()),
                  );
               }
             )
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-            onPressed:
-                () {}, // No futuro redirecionará para uma tela de "Tweetar"
-            child: Icon(Icons.add)),
         drawer: Drawer(
           child: ListView(children: <Widget>[
             DrawerHeader(
@@ -33,12 +31,21 @@ class Home extends StatelessWidget {
             ListTile(
               title: Text('Perfil'),
               onTap: () {
-                //Navigator.push(
-                  //context,
-                  //MaterialPageRoute(builder: (context) => const ()),
-                 //);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
               }
             ),
+            ListTile(
+              title: Text('Novo Pet'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdicionarAnimal()),
+                )
+              }
+            )
           ]),
         ),
         bottomNavigationBar: BottomNavigationBar(
