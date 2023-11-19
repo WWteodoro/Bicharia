@@ -17,16 +17,13 @@ Content-Type: application/json
 }
 
 ### Update User
-PUT  http://localhost:3333/users/
+PUT  http://localhost:3333/users/74633aa6-4e40-48d0-a8a9-8ffcc4a1c044
 Content-Type: application/json
 
 {
-    "name": "up",
+    "name": "calvo2",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a",
-    "name": "Novo Nome",
-    "email": "novoemail@usuario.com",
-    "password": "NovaSenha123"
+    "password": "A1234567.a"
 }
 
 ### Excluir um Usuário por ID
