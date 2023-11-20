@@ -2,10 +2,9 @@ import { IUser } from "./IUserInterfaces";
 
 export interface IPost{
   id: string;
-  date: Date;
+  date?: Date;
   photo: string;
   text: string;
-  user: IUser;
   userId: string;
   createdAt?: Date;
   updatedAt?: Date;

@@ -36,5 +36,15 @@ export class UserRepository implements IUserRepository{
             where: { id }
         })
     }
+
+    async findUserByEmail(email: string): Promise<IUser> {
+        const result = await prisma.user.findUnique({
+          where: { email }  
+        })
+
+        if(!result) throw new Error('User not found')
+
+        return result;
+    }
     
 }

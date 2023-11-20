@@ -12,7 +12,7 @@ export class AuthenticateUserService {
     ) { }
     
     async execute({email, password}: IUserAuthenticateRequest): Promise<Object | void> {
-        const user = await this.userRepo.findOneUser(email);
+        const user = await this.userRepo.findUserByEmail(email);
         
         if(user) {
             const res = await this.hashRepo.uncryptographie(password, user.password)

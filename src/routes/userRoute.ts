@@ -8,6 +8,7 @@ import { UpdateUserController } from "./controllers/UpdateUserController";
 import { DeleteUserController } from "./controllers/DeleteUserController";
 import { resolveController } from "../adapters/resolveController";
 import { HashRepository } from "../repositories/HashRepository";
+import { GetUserByEmailController } from "./controllers/GetUserByEmailController";
 
 const users: IUser[] = [];
 export const userRoute = Router();
@@ -20,6 +21,7 @@ const getUserController = new GetUserController(userRepo)
 const listUsersController = new ListUsersController(userRepo)
 const updateUserController = new UpdateUserController(userRepo)
 const deleteUserController = new DeleteUserController(userRepo)
+const getByEmailUsersController = new GetUserByEmailController(userRepo)
 
 //criar 
 userRoute.post('/', resolveController(async (req: Request, res: Response) => {
@@ -44,4 +46,8 @@ userRoute.put('/:id', resolveController(async (req: Request, res: Response) => {
 //Exclusão
 userRoute.delete('/:id', resolveController(async (req: Request, res: Response) => {
     return await deleteUserController.handle(req,res)
+}))
+
+userRoute.get('/:email', resolveController(async (req: Request, res: Response) => {
+    return await getByEmailUsersController.handle(req,res)
 }))

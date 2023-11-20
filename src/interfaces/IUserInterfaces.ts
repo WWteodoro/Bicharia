@@ -24,6 +24,10 @@ export interface IUserGetRequest {
     id: string;
 }
 
+export interface IUserGetByEmailRequest{
+    email: string;
+}
+
 export interface IUserUpdateRequest{
     id: string;
     name: string;
