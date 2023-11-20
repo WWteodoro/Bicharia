@@ -8,7 +8,7 @@ import 'package:telas_c/Pages/Petadicionar.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -16,7 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [HomePage(), Add(), Editar_animal()];
+  final List<Widget> _children = [HomeTab(), Add(), PetsTab()];
+
   void onTabPressed(int index) {
     setState(() {
       _currentIndex = index;
@@ -27,54 +28,79 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Home", style: TextStyle(color: Colors.white)),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-              })
+            icon: Icon(Icons.logout),
+            color: Colors.white,
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
+            },
+          )
         ],
         backgroundColor: Colors.orange,
       ),
       drawer: Drawer(
-        child: ListView(children: <Widget>[
-          DrawerHeader(
+        surfaceTintColor: Colors.white,
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
               decoration: BoxDecoration(color: Colors.orange),
-              child: Text('User Placeholder')),
-          ListTile(
+              child: Text('User Placeholder'),
+            ),
+            ListTile(
               title: Text('Perfil'),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Profile()),
                 );
-              }),
-          ListTile(
+              },
+            ),
+            ListTile(
               title: Text('Novo Pet'),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => AdicionarAnimal()),
                 );
-              })
-        ]),
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          onTap: onTabPressed,
-          currentIndex: _currentIndex,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: [
-            BottomNavigationBarItem(icon: new Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: new Icon(Icons.add), label: 'Novo Post'),
-            BottomNavigationBarItem(icon: new Icon(Icons.pets), label: 'Pets'),
-          ]),
+        onTap: onTabPressed,
+        selectedItemColor: Colors.orange,
+        currentIndex: _currentIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Novo Post'),
+          BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Pets'),
+        ],
+      ),
       body: _children[_currentIndex],
     );
+  }
+}
+
+class HomeTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Replace with the content for the Home tab
+    return Center(child: Text('Home Tab Content'));
+  }
+}
+
+class PetsTab extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // Replace with the content for the Pets tab
+    return Center(child: Text('Pets Tab Content'));
   }
 }
