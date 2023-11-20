@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/loginpage.dart';
-import 'package:telas_c/Pages/profile.dart';
+import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/Pages/Petadicionar.dart';
 
 class Home extends StatelessWidget {
@@ -13,14 +13,13 @@ class Home extends StatelessWidget {
           title: const Text("Home"),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.logout),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) =>  LoginPage()),
-                 );
-              }
-            )
+                icon: Icon(Icons.logout),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                })
           ],
           backgroundColor: Colors.orange,
         ),
@@ -30,23 +29,21 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(color: Colors.orange),
                 child: Text('User Placeholder')),
             ListTile(
-              title: Text('Perfil'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Profile()),
-                );
-              }
-            ),
+                title: Text('Perfil'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Profile()),
+                  );
+                }),
             ListTile(
-              title: Text('Novo Pet'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AdicionarAnimal()),
-                );
-              }
-            )
+                title: Text('Novo Pet'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AdicionarAnimal()),
+                  );
+                })
           ]),
         ),
         bottomNavigationBar: BottomNavigationBar(
