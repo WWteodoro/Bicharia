@@ -9,7 +9,7 @@ Future<void> Create_Pet(String pet_name, String type, String password,
     String passwordconfirm, String photo, String id_user) async {
   final pet = http.post(
     Uri.parse(
-      "http://localhost:3333/",
+      "http://localhost:3333/pets",
     ),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
