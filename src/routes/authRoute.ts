@@ -13,7 +13,7 @@ import { CryptoRepository } from "../repositories/CryptoRepository";
 export const userAuthenticateRoute = Router();
 
 const cryptoRepo: ICryptoRepository = new CryptoRepository()
-const userRepo: IUserRepository = new UserRepository();
+const userRepo: IUserRepository = new UserRepository(cryptoRepo);
 const jwtRepo: IJWTRepository = new JWTRepository();
 const hashRepo: IHashRepository = new HashRepository();
 

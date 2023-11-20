@@ -9,12 +9,14 @@ import { DeleteUserController } from "./controllers/DeleteUserController";
 import { resolveController } from "../adapters/resolveController";
 import { HashRepository } from "../repositories/HashRepository";
 import { GetUserByEmailController } from "./controllers/GetUserByEmailController";
+import { CryptoRepository } from "../repositories/CryptoRepository";
 
 const users: IUser[] = [];
 export const userRoute = Router();
 
 
-const userRepo = new UserRepository()
+const cryptoRepo = new CryptoRepository()
+const userRepo = new UserRepository(cryptoRepo);
 const hashRepo = new HashRepository()
 const createUserController = new CreateUserController(userRepo, hashRepo)
 const getUserController = new GetUserController(userRepo)
