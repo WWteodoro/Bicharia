@@ -11,14 +11,14 @@ export class AuthenticateUserService {
         private hashRepo: IHashRepository
     ) { }
     
-    async execute({email, password}: IUserAuthenticateRequest): Promise<Object | void> {
+    async execute({email, password}: IUserAuthenticateRequest): Promise<Object> {
         const user = await this.userRepo.findUserByEmail(email);
-        
         if(user) {
             const res = await this.hashRepo.uncryptographie(password, user.password)
             
             if(res) {
                 const token = this.jwtRepo.generate({ email: user.email!, id: user.id })
+                console.log(token)
 
                 return { user, token }
 

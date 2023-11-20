@@ -50,6 +50,6 @@ userRoute.delete('/:id', resolveController(async (req: Request, res: Response) =
     return await deleteUserController.handle(req,res)
 }))
 
-userRoute.get('/:email', resolveController(async (req: Request, res: Response) => {
+userRoute.get('/email/:email', resolveController(async (req: Request, res: Response) => {
     return await getByEmailUsersController.handle(req,res)
 }))

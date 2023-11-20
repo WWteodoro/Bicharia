@@ -10,6 +10,6 @@ export class GetUserByEmailController{
         const getUserByEmailService = new GetUserByEmailService(this.userRepo)
         const result = await getUserByEmailService.execute({ email })
 
-        return res.json(result)
+        return res.status(200).json(result)
     }
 }

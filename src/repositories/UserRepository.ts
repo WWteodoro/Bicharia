@@ -41,15 +41,13 @@ export class UserRepository implements IUserRepository{
         })
     }
 
-    async findUserByEmail(email: IUser['email']): Promise<IUser | null> {
-        email = await this.cryptoRepo.encrypt(email);
-        let result = await prisma.user.findFirst({
-          where: { email },
+    async findUserByEmail(Email: string): Promise<IUser> {
+        const result = await prisma.user.findUnique({
+          where: { email: Email }
         });
-        if(result) result = { ...result, ...await this.cryptoRepo.useDecryptoUser(result) };
-        // Verificar uma maneira melho de implementar porque o primeiro caso sempre é null
-        // if (!result !== null || result !== null) throw new Error('User not found');
-        return result || null;
+        if(!result) throw new Error('a')
+        
+        return result;
       }
     
 }
