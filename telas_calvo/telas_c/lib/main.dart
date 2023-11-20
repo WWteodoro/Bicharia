@@ -25,11 +25,11 @@ class MyApp extends StatelessWidget {
         providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
         child: MaterialApp(
           title: 'Bicharia',
-          home: Home(),
+          home: HomePage(),
           routes: {
             Routaaas.Animal_Cadastro: (_) => const PetCadastros(),
-            Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
-            Routaaas.Home: (_) => Home(),
+            // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
+            Routaaas.Home: (_) => HomePage(),
             Routaaas.Login: (_) => LoginPage(),
             Routaaas.Cadastro_user: (_) => CadastroPage(),
             Routaaas.Animal_editar: (_) => Editar_animal(),
