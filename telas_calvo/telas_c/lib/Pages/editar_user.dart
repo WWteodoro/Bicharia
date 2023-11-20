@@ -10,8 +10,6 @@ class Editar_Users extends StatelessWidget {
     final senha = TextEditingController();
     final nome = TextEditingController();
     final email = TextEditingController();
-    final email_confirmar = TextEditingController();
-    final senha_confirmar = TextEditingController();
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
@@ -27,18 +25,11 @@ class Editar_Users extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
-                  Future<int> res = Update_user_data(
-                      nome.text, email.text, senha.text, Dados_Usuario.id);
-                  if (res == 1) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Dados Atualizados')),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content: Text('Erro na Atualização tente novamente')),
-                    );
-                  }
+                  Update_user_data(
+                      Dados_Usuario.id, nome.text, email.text, senha.text);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Dados Atualizados')),
+                  );
                 },
                 icon: Icon(Icons.save_alt_outlined))
           ]),
@@ -71,7 +62,7 @@ class Editar_Users extends StatelessWidget {
                         return null;
                       }),
                   TextFormField(
-                      controller: senha_confirmar,
+                      controller: senha,
                       decoration: InputDecoration(labelText: "Senha"),
                       validator: (validtor) {
                         if (validtor == null || validtor.isEmpty) {

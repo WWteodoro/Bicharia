@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/loginpage.dart';
+import 'package:telas_c/Pages/Profile.dart';
+import 'package:telas_c/Pages/Petadicionar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -19,11 +21,8 @@ class Home extends StatelessWidget {
                   );
                 })
           ],
+          backgroundColor: Colors.orange,
         ),
-        floatingActionButton: FloatingActionButton(
-            onPressed:
-                () {}, // No futuro redirecionará para uma tela de "Tweetar"
-            child: Icon(Icons.add)),
         drawer: Drawer(
           child: ListView(children: <Widget>[
             DrawerHeader(
@@ -32,23 +31,31 @@ class Home extends StatelessWidget {
             ListTile(
                 title: Text('Perfil'),
                 onTap: () {
-                  //Navigator.push(
-                  //context,
-                  //MaterialPageRoute(builder: (context) => const ()),
-                  //);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Profile()),
+                  );
                 }),
+            ListTile(
+                title: Text('Novo Pet'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AdicionarAnimal()),
+                  );
+                })
           ]),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'home',
+              label: 'Home',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Tweet'
                 // onPressed: () {Navigator.pushNamed(context,);}
                 ),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           ],
         ));
   }
