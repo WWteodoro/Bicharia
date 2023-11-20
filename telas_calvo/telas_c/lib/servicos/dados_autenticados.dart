@@ -1,8 +1,8 @@
 // ignore: camel_case_types
 class Dados_Usuario {
-  static late String id = "269b794f-2cac-4554-bfba-1cc16a30dd24";
-  static late String nome = "Calvo calvo";
-  static late String email = "exemplo@usuario.com";
+  static late String id = "41dba0b9-9cd9-4835-bc32-4fe3dc561370";
+  static late String nome = "calvo123teste";
+  static late String email = "calvo@calvo.calvo";
 }
 
 class User {
