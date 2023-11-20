@@ -1,39 +1,40 @@
-// import 'package:flutter/material.dart';
-// import 'package:twitter/services/posts.dart';
+// ignore_for_file: unnecessary_new, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-// class Add extends StatefulWidget {
-//   Add({Key key}) : super(key: key);
+import 'package:flutter/material.dart';
 
-//   @override
-//   _AddState createState() => _AddState();
-// }
+class Add extends StatefulWidget {
+  const Add({super.key});
 
-// class _AddState extends State<Add> {
-//   final PostService _postService = PostService();
-//   String text = '';
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           title: Text('Tweet'),
-//           actions: <Widget>[
-//             FlatButton(
-//                 textColor: Colors.white,
-//                 onPressed: () async {
-//                   _postService.savePost(text);
-//                   Navigator.pop(context);
-//                 },
-//                 child: Text('Tweet'))
-//           ],
-//         ),
-//         body: Container(
-//             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-//             child: new Form(child: TextFormField(
-//               onChanged: (val) {
-//                 setState(() {
-//                   text = val;
-//                 });
-//               },
-//             ))));
-//   }
-// }
+  @override
+  State<Add> createState() => _AddState();
+}
+
+class _AddState extends State<Add> {
+  String text = '';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    appBar: AppBar(
+      title: Text('Add Post'),
+      actions: <Widget>[
+        TextButton(
+          style: TextButton.styleFrom(foregroundColor: Colors.white,),
+          onPressed: null,
+          child: Text('Post'))
+      ],
+    ),
+    body: Container(
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      child: new Form(
+        child: TextFormField(
+          onChanged: (val) {
+            setState((){
+              text = val;
+            });
+          }
+        ,)
+        )
+    )
+    );
+  }
+}
