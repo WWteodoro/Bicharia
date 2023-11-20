@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:telas_c/Pages/loginpage.dart';
+import 'package:telas_c/Pages/profile.dart';
+import 'package:telas_c/Pages/Petadicionar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,15 +13,17 @@ class Home extends StatelessWidget {
           title: const Text("Home"),
           actions: <Widget>[
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  LoginPage()),
+                 );
+              }
             )
           ],
+          backgroundColor: Colors.orange,
         ),
-        floatingActionButton: FloatingActionButton(
-            onPressed:
-                () {}, // No futuro redirecionará para uma tela de "Tweetar"
-            child: Icon(Icons.add)),
         drawer: Drawer(
           child: ListView(children: <Widget>[
             DrawerHeader(
@@ -26,23 +31,34 @@ class Home extends StatelessWidget {
                 child: Text('User Placeholder')),
             ListTile(
               title: Text('Perfil'),
-              //Route futura para perfil
               onTap: () {
-                //  Navigator.pushNamed(context,routeName)
-              },
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              }
             ),
+            ListTile(
+              title: Text('Novo Pet'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdicionarAnimal()),
+                );
+              }
+            )
           ]),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'home',
+              label: 'Home',
             ),
             BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Tweet'
                 // onPressed: () {Navigator.pushNamed(context,);}
                 ),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           ],
         ));
   }

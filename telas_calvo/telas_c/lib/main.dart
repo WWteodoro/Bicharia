@@ -13,7 +13,6 @@ import 'package:telas_c/approute/AppRoute.dart';
 import 'package:telas_c/componentes/Pets.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
-import 'package:telas_c/Pages/Profile.dart';
 
 void main() => runApp(const MyApp());
 
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
         child: MaterialApp(
           title: 'Bicharia',
-          home: Editar_Users(),
+          home: Home(),
           routes: {
             Routaaas.Animal_Cadastro: (_) => const PetCadastros(),
             Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
