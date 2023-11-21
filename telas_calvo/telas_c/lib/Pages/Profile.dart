@@ -27,21 +27,21 @@ class _MinhaPaginaState extends State<Profile> {
           backgroundColor: Colors.orange,
           leading: IconButton(
             onPressed: () {
-              Deletar_user(Dados_Usuario.id);
-              Navigator.pushNamed(context, Routaaas.Cadastro_user);
+              Navigator.pushNamed(context, Routaaas.Home);
             },
             icon: Icon(
-              Icons.remove,
+              Icons.arrow_back,
               color: Colors.white,
             ),
           ),
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, Routaaas.Home);
+                Deletar_user(Dados_Usuario.id);
+                Navigator.pushNamed(context, Routaaas.Cadastro_user);
               },
               icon: Icon(
-                Icons.home,
+                Icons.remove,
                 color: Colors.white,
               ),
             ),

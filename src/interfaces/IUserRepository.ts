@@ -6,4 +6,5 @@ export interface IUserRepository{
     insert(props: IUser): Promise<void>
     update(props: IUser, id: string): Promise<void>
     delete(id: string): Promise<void>
+    findUserByEmail(email: IUser["email"]): Promise<IUser>
 }

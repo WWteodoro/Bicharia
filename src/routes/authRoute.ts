@@ -7,10 +7,13 @@ import { IJWTRepository } from "../interfaces/IJTWRepository";
 import { JWTRepository } from "../repositories/JWTRepository";
 import { IHashRepository } from "../interfaces/IHashRepository";
 import { HashRepository } from "../repositories/HashRepository";
+import { ICryptoRepository } from "../interfaces/ICryptoRepository";
+import { CryptoRepository } from "../repositories/CryptoRepository";
 
 export const userAuthenticateRoute = Router();
 
-const userRepo: IUserRepository = new UserRepository();
+const cryptoRepo: ICryptoRepository = new CryptoRepository()
+const userRepo: IUserRepository = new UserRepository(cryptoRepo);
 const jwtRepo: IJWTRepository = new JWTRepository();
 const hashRepo: IHashRepository = new HashRepository();
 

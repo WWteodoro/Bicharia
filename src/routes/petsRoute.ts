@@ -2,18 +2,22 @@ import { Request, Response, Router } from "express";
 import { IPets } from "../interfaces/IPetsInterfaces";
 import { UserRepository } from "../repositories/UserRepository";
 import { PetsRepository } from "../repositories/PetRepository";
-import { UpdatePetController } from "./controllers/UpdatePetController";
 import { CreateUserController } from "./controllers/CreateUserController";
+import { ICryptoRepository } from "../interfaces/ICryptoRepository";
+import { IUserRepository } from "../interfaces/IUserRepository";
+import { CryptoRepository } from "../repositories/CryptoRepository";
 import { CreatePetController } from "./controllers/createPetController";
+import { UpdatePetController } from "./controllers/UpdatePetController";
 import { DeletePetByIdController } from "./controllers/deletePetByIdController";
 import { GetAllPetsController } from "./controllers/getAllPetsController";
 import { GetPetByIdController } from "./controllers/getPetByIdController";
 export const petsRoute = Router();
 
 const petsRepo = new PetsRepository();
-const usersRepo = new UserRepository();
+const cryptoRepo: ICryptoRepository = new CryptoRepository()
+const userRepo: IUserRepository = new UserRepository(cryptoRepo);
 
-const CreatePet = new CreatePetController(petsRepo, usersRepo);
+const CreatePet = new CreatePetController(petsRepo, userRepo);
 const DeletePetById = new DeletePetByIdController(petsRepo);
 const GetAllPets = new GetAllPetsController(petsRepo);
 const UpdatePet = new UpdatePetController(petsRepo)
