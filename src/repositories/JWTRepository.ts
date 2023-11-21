@@ -1,7 +1,7 @@
 import { IJWTPayload, IJWTRepository } from "../interfaces/IJTWRepository";
 import { sign, verify } from "jsonwebtoken" 
 
-require("dotenv").config({ path: ".env.example"})
+require("dotenv").config({ path: ".env"})
 
 export class JWTRepository implements IJWTRepository {
     generate(payload: IJWTPayload): string {
