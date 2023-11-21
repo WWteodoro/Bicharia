@@ -1,7 +1,8 @@
 // deletePetByIdController.ts
 import { Request, Response } from "express";
 import { IPetsRepository } from "../../interfaces/IPetsRepository";
-import { DeletePetByIdService } from "../../services/DeletePetByIdService";
+import { DeletePetByIdService } from "../../services/deletePetByIdService";
+
 
 export class DeletePetByIdController {
   constructor(private petsRepo: IPetsRepository) {}

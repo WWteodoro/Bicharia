@@ -2,7 +2,6 @@ import { Request, Response, Router } from "express";
 import { IPets } from "../interfaces/IPetsInterfaces";
 import { UserRepository } from "../repositories/UserRepository";
 import { PetsRepository } from "../repositories/PetRepository";
-
 import { CreateUserController } from "./controllers/CreateUserController";
 import { ICryptoRepository } from "../interfaces/ICryptoRepository";
 import { IUserRepository } from "../interfaces/IUserRepository";
