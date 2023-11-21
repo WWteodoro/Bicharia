@@ -2,7 +2,6 @@
 GET http://localhost:3333/pets
 
 ### Create Pet
-POST http://localhost:3333/pets
 Content-Type: application/json
 
 {

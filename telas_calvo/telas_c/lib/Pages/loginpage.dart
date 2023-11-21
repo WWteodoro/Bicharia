@@ -8,6 +8,8 @@ final email = TextEditingController();
 final senha = TextEditingController();
 
 class LoginPage extends StatelessWidget {
+  final email = TextEditingController();
+  final senha = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

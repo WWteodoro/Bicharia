@@ -15,7 +15,6 @@ class AdicionarAnimal extends StatelessWidget {
     final senha_confirmar = TextEditingController();
     final nome = TextEditingController();
     final tipo = TextEditingController();
-    final Map<String, String> _formData = {};
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
@@ -79,7 +78,7 @@ class AdicionarAnimal extends StatelessWidget {
                         return null;
                       }),
                   TextFormField(
-                      controller: senha,
+                      controller: senha_confirmar,
                       decoration: InputDecoration(labelText: "Senha Confirmar"),
                       validator: (validtor) {
                         if (validtor == null || validtor.isEmpty) {

@@ -11,19 +11,19 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "calvo555",
+    "name": "calvo123teste",
     "email": "calvo@calvo.calvo",
     "password": "A1234567.a"
 }
 
 ### Update User
-PUT http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
+PUT http://localhost:3333/users/ca8d6ec8-1e4c-4373-9e4f-3cc9c7f5a395
 Content-Type: application/json
 
 {
-    "name": "Novo N555ome",
+    "name": "calvofelipepoderosoN555o000me",
     "email": "novoemail@calvo.com",
-    "password": "NovaSenha123.a",
+    "password": "NovaS.enha123a"
 }
 
 ### Excluir um Usuário por ID

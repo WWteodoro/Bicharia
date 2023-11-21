@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [ChangeNotifierProvider(create: (ctx) => Pets())],
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Bicharia',
           home: HomePage(),
           routes: {
