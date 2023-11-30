@@ -1,0 +1,14 @@
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/telas_c.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/edit_cache.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/rebuild_cache.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/list_install_components.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/install.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/install/local.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/CMakeFiles/install/strip.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/flutter_assemble.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/edit_cache.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/rebuild_cache.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/list_install_components.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/install.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/install/local.dir
+/home/guilherme/Desktop/Bicharia/telas_calvo/telas_c/linux/build/flutter/CMakeFiles/install/strip.dir

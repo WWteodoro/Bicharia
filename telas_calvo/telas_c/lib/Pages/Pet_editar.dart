@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:telas_c/servicos/Apipetservicos.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
+import 'package:telas_c/componentes/model_pet.dart';
 class Editar_animal extends StatelessWidget {
-  const Editar_animal({super.key});
+  final Pet dog;
+  const Editar_animal(this.dog); 
   @override
   Widget build(BuildContext context) {
-    final url = TextEditingController();
     final nome = TextEditingController();
     final tipo = TextEditingController();
     final _form = GlobalKey<FormState>();
@@ -15,7 +17,9 @@ class Editar_animal extends StatelessWidget {
           ),
           backgroundColor: Colors.orange,
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.save_alt_outlined))
+            IconButton(onPressed: () {
+              update_pet_data(dog.id, dog.nome);
+            }, icon: Icon(Icons.save_alt_outlined))
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),
@@ -36,15 +40,6 @@ class Editar_animal extends StatelessWidget {
                   TextFormField(
                       controller: tipo,
                       decoration: InputDecoration(labelText: "Tipo"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      }),
-                  TextFormField(
-                      controller: url,
-                      decoration: InputDecoration(labelText: "URL do Avatar"),
                       validator: (validtor) {
                         if (validtor == null || validtor.isEmpty) {
                           return "Campos vazio";

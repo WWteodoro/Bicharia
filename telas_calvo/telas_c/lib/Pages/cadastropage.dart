@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:telas_c/Pages/loginpage.dart';
-import 'package:telas_c/modelo/usermodel.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/Pages/home.dart';
 
@@ -67,7 +66,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                     labelText: "E-mail",
                     labelStyle: TextStyle(
-                      color: Colors.black87,
+                      color: Colors.black38,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                     )),
@@ -83,7 +82,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "E-mail Confirmação",
                   labelStyle: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.black38,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),
@@ -100,7 +99,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "Senha",
                   labelStyle: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.black38,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),
@@ -117,7 +116,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                   labelText: "Senha confirmacao",
                   labelStyle: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.black38,
                     fontWeight: FontWeight.w400,
                     fontSize: 20,
                   ),

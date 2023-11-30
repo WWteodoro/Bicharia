@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
-import 'package:telas_c/modelo/model_pet.dart';
-
+import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/servicos/Apipetservicos.dart';
 class PetTitle extends StatelessWidget {
   final Pet dog;
   const PetTitle(this.dog);
@@ -21,10 +21,12 @@ class PetTitle extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Editar_animal()));
+                            builder: (context) => Editar_animal(dog)));
                   },
                   icon: Icon(Icons.edit)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.delete))
+              IconButton(onPressed: () {
+                Deletar_pet(dog.id);
+              }, icon: Icon(Icons.delete))
             ],
           ),
         ));

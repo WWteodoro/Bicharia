@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/componentes/Pets.dart';
-import 'package:telas_c/modelo/model_pet.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 
@@ -18,6 +17,12 @@ class AdicionarAnimal extends StatelessWidget {
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
+          leading:IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
           title: Text(
             "Criar Pet",
           ),
@@ -40,6 +45,17 @@ class AdicionarAnimal extends StatelessWidget {
               key: _form,
               child: Column(
                 children: [
+                  CircleAvatar(
+            child: IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.pets),
+              iconSize: 75,
+              onPressed: () {
+              },
+            ),
+            radius: 75,
+            backgroundColor: Colors.orange,
+          ),
                   TextFormField(
                     controller: nome,
                     validator: (validtor) {
@@ -60,15 +76,6 @@ class AdicionarAnimal extends StatelessWidget {
                         return null;
                       }),
                   TextFormField(
-                      controller: url,
-                      decoration: InputDecoration(labelText: "URL do Avatar"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      }),
-                  TextFormField(
                       controller: senha,
                       decoration: InputDecoration(labelText: "Senha"),
                       validator: (validtor) {
@@ -77,15 +84,6 @@ class AdicionarAnimal extends StatelessWidget {
                         }
                         return null;
                       }),
-                  TextFormField(
-                      controller: senha_confirmar,
-                      decoration: InputDecoration(labelText: "Senha Confirmar"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      })
                 ],
               ))),
     );
