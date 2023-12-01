@@ -9,7 +9,6 @@ class Editar_Users extends StatelessWidget {
   Widget build(BuildContext context) {
     final senha = TextEditingController();
     final nome = TextEditingController();
-    final email = TextEditingController();
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +25,7 @@ class Editar_Users extends StatelessWidget {
             IconButton(
                 onPressed: () {
                   Update_user_data(
-                      Dados_Usuario.id, nome.text, email.text, senha.text);
+                      Dados_Usuario.id, nome.text,senha.text);
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Dados Atualizados')),
                   );
@@ -49,18 +48,6 @@ class Editar_Users extends StatelessWidget {
                     },
                     decoration: InputDecoration(labelText: "Nome"),
                   ),
-                  TextFormField(
-                      controller: email,
-                      decoration: InputDecoration(labelText: "Email"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        if (validtor.contains("@")) {
-                          return "Email invalido";
-                        }
-                        return null;
-                      }),
                   TextFormField(
                       controller: senha,
                       decoration: InputDecoration(labelText: "Senha"),

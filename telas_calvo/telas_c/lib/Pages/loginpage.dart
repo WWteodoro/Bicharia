@@ -8,8 +8,6 @@ final email = TextEditingController();
 final senha = TextEditingController();
 
 class LoginPage extends StatelessWidget {
-  final email = TextEditingController();
-  final senha = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +83,7 @@ class LoginPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                AutenticarUser(email.text, senha.text);
+                AutenticarUser(email.text, senha.text,context);
               },
               child: Container(
                 height: 50,
