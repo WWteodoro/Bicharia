@@ -10,6 +10,8 @@ import { resolveController } from "../adapters/resolveController";
 import { HashRepository } from "../repositories/HashRepository";
 import { GetUserByEmailController } from "./controllers/GetUserByEmailController";
 import { CryptoRepository } from "../repositories/CryptoRepository";
+import { GetUserPetsService } from "../services/GetUserPetsService";
+import { GetUserPetsController } from "./controllers/GetUserPetsController";
 
 const users: IUser[] = [];
 export const userRoute = Router();
@@ -24,6 +26,7 @@ const listUsersController = new ListUsersController(userRepo)
 const updateUserController = new UpdateUserController(userRepo)
 const deleteUserController = new DeleteUserController(userRepo)
 const getByEmailUsersController = new GetUserByEmailController(userRepo)
+const getUserPetsController = new GetUserPetsController(userRepo)
 
 //criar 
 userRoute.post('/', resolveController(async (req: Request, res: Response) => {
@@ -50,6 +53,12 @@ userRoute.delete('/:id', resolveController(async (req: Request, res: Response) =
     return await deleteUserController.handle(req,res)
 }))
 
+//GetByEmail
 userRoute.get('/email/:email', resolveController(async (req: Request, res: Response) => {
     return await getByEmailUsersController.handle(req,res)
+}))
+
+//Pets do usuário
+userRoute.get('/pets/:id', resolveController(async (req: Request, res: Response) => {
+    return await getUserPetsController.handle(req,res)
 }))
