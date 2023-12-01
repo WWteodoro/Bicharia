@@ -7,9 +7,7 @@ export interface IUser {
     password: string;
     confirmEmail?: string;
     confirmPassword?: string;
-    pets?: string[];
-    postId?: string[];
-    reactionId?: string[];
+    pets?: IPets[];
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -46,19 +44,4 @@ export interface IUserDeleteRequest{
 export interface IUserAuthenticateRequest {
     email    : string;
     password : string;
-}
-
-export interface IUserCryptoRequest{
-    id: string;
-    name: string;
-    email: string;
-    password: string;
-    confirmEmail?: string;
-    confirmPassword?: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-}
-
-export interface IUserGetPetsRequest{
-    id: string;
 }

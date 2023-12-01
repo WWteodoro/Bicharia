@@ -1,9 +1,9 @@
 import { User } from "../entities/user";
-import { IUser, IUserCryptoRequest } from "../interfaces/IUserInterfaces";
+import { IUser } from "../interfaces/IUserInterfaces";
 
 export function getUserKeys() {
-    let toReturn: Array<keyof IUserCryptoRequest> = [];
-    type PropsArray = Array<keyof IUserCryptoRequest>;
+    let toReturn: Array<keyof IUser> = [];
+    type PropsArray = Array<keyof IUser>;
     const propsArray: PropsArray = Object.keys(new User({} as IUser)) as PropsArray;
   
     for (const prop of propsArray) {

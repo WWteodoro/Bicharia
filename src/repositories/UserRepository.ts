@@ -1,5 +1,4 @@
 import { ICryptoRepository } from "../interfaces/ICryptoRepository";
-import { IPets } from "../interfaces/IPetsInterfaces";
 import { IUser } from "../interfaces/IUserInterfaces";
 import { IUserRepository } from "../interfaces/IUserRepository";
 import { PrismaClient } from "@prisma/client";
@@ -9,14 +8,6 @@ export class UserRepository implements IUserRepository{
     constructor(
         private cryptoRepo: ICryptoRepository,
       ) {}
-    async findPets(id: string): Promise<string[]> {
-        const result = await prisma.user.findUnique({
-            where: { id }
-        })
-
-        if(!result) throw new Error('User not found')
-        return result.pets
-    }
     async findAll(): Promise<IUser[]> {
         const result = await prisma.user.findMany()
         return result
