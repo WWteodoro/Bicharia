@@ -7,11 +7,7 @@ const prisma = new PrismaClient();
 export class PetsRepository implements IPetsRepository {
 
   async findAll(): Promise<IPets[]> {
-    const result = await prisma.pet.findMany({
-      include: {
-        owners: true,
-      },
-    });
+    const result = await prisma.pet.findMany();
     return result;
   }
 
