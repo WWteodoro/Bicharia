@@ -1,4 +1,3 @@
-import { Interaction } from "../entities/interaction";
 import { IUser } from "./IUserInterfaces";
 
 export interface IPost{
@@ -7,7 +6,6 @@ export interface IPost{
   photo: string;
   text: string;
   userId: string;
-  petId: string
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -16,7 +14,6 @@ export interface IPostCreateRequest{
     photo: string;
     text: string;
     userId: string;
-    petId: string;
 }
 
 export interface IPostGetRequest{

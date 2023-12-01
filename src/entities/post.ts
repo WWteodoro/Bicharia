@@ -6,7 +6,6 @@ export class Post{
   dated: IPost['date'];
   photo: IPost['photo'];
   userId: IPost['userId'];
-  petId: IPost['petId']
   text: IPost['text'];
   createdAt?: IPost['createdAt'];
   updatedAt?: IPost['updatedAt'];
@@ -17,7 +16,6 @@ export class Post{
     this.photo = props.photo;
     this.userId = props.userId;
     this.text = props.text;
-    this.petId = props.petId;
     this.createdAt = props.createdAt || new Date();
     this.updatedAt = new Date();
   }
@@ -28,7 +26,6 @@ export class Post{
         date: this.dated,
         photo: this.photo,
         userId: this.userId,
-        petId: this.petId,
         text: this.text,
         createdAt: this.createdAt,
         updatedAt: this.updatedAt
