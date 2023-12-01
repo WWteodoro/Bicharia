@@ -13,7 +13,9 @@ Content-Type: application/json
 {
     "name": "calvo123teste",
     "email": "calvo@calvo.calvo",
-    "password": "A1234567.a"
+    "password": "A1234567.a",
+    "confirmEmail": "calvo@calvo.calvo",
+    "confirmaPassword": "A1234567.a"
 }
 
 ### Update User
