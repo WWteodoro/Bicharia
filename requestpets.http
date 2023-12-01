@@ -18,27 +18,13 @@ Content-Type: application/json
 }
 
 ### Update Pet ID
-PUT http://localhost:3333/pets/aatVnKKFZR/updatePet
-Content-Type: application/json
-
-{
-    "newId": "vovoCleusa"
-}
-
-### Update Pet Name
+Update Pet Type
 PUT http://localhost:3333/pets/marmota/updatePet
 Content-Type: application/json
-
 {
-    "name": "marmota"
-}
-
-### Update Pet Type
-PUT http://localhost:3333/pets/marmota/updatePet
-Content-Type: application/json
-
-{
-    "type": "marmota"
+  "newId":"marmota",
+  "name": "marmota",
+  "type": "marmota",
 }
 
 ### Delete Pet

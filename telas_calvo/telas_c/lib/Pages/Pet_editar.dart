@@ -19,7 +19,9 @@ class Editar_animal extends StatelessWidget {
           actions: [
             IconButton(onPressed: () {
               update_pet_data(dog.id, dog.nome);
-            }, icon: Icon(Icons.save_alt_outlined))
+            },color: Colors.white, 
+            icon: Icon(Icons.save_alt_outlined),
+            )
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),

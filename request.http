@@ -11,11 +11,10 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "calvo123teste",
-    "email": "calvo@calvo.calvo",
+    "name": "calvo1345teste",
+    "email": "calvo@123.com",
     "password": "A1234567.a"
 }
-
 ### Update User
 PUT http://localhost:3333/users/ca8d6ec8-1e4c-4373-9e4f-3cc9c7f5a395
 Content-Type: application/json

@@ -22,10 +22,13 @@ class AdicionarAnimal extends StatelessWidget {
             onPressed: (){
               Navigator.pop(context);
             },
+            color: Colors.white,
           ),
-          title: Text(
+          title:Center(child: Center(child:Text(
             "Criar Pet",
-          ),
+            style:TextStyle(fontSize: 30,color: Colors.white,),
+          ) 
+          ),),
           backgroundColor: Colors.orange,
           actions: [
             IconButton(
@@ -37,7 +40,7 @@ class AdicionarAnimal extends StatelessWidget {
                     Navigator.of(context).pop();
                   }
                 },
-                icon: Icon(Icons.save_alt_outlined))
+                icon: Icon(Icons.save_alt_outlined),color: Colors.white,)
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),

@@ -34,13 +34,15 @@ Future<void> Deletar_pet(String id) async {
   );
 }
 Future<void> update_pet_data(
-  String id, String nome) async {
+  String id_user,String id,String nome,String tipo) async {
   final response =
       await http.put(Uri.parse('http://localhost:3333/users/' + id),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
           },
-          body: jsonEncode(<String, String>{
-            'name': nome,
-          }));
+          body: jsonEncode(<String,String>{
+          "newId":id,
+          "name": nome,
+          "type": tipo,
+}));
 }
