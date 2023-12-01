@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:telas_c/componentes/Pets.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 

@@ -1,9 +1,10 @@
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
-
+import"package:telas_c/componentes/model_pet.dart";
 Future<void> Create_Pet(String pet_name, String type, String password,
     String passwordconfirm, String photo, String id_user) async {
   final pet = http.post(
@@ -44,5 +45,10 @@ Future<void> update_pet_data(
           "newId":id,
           "name": nome,
           "type": tipo,
-}));
+          })
+    );
+}
+Future<http.Response> Petfetch(String id) async {
+  final response = await http.get(Uri.parse('http://localhost:3333/pets/'+id));
+  return response;
 }

@@ -10,7 +10,6 @@ import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/approute/AppRoute.dart';
-import 'package:telas_c/componentes/Pets.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
 import 'Pages/Petadicionar.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Bicharia',
-          home: HomePage(),
+          home: CadastroPage(),
           routes: {
             // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
             Routaaas.Home: (_) => HomePage(),

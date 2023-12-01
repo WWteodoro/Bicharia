@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
 class Editar_animal extends StatelessWidget {
   final Pet dog;
   const Editar_animal(this.dog); 
@@ -18,7 +19,7 @@ class Editar_animal extends StatelessWidget {
           backgroundColor: Colors.orange,
           actions: [
             IconButton(onPressed: () {
-              update_pet_data(dog.id, dog.nome);
+              update_pet_data(Dados_Usuario.id,dog.id, dog.nome,dog.tipo);
             },color: Colors.white, 
             icon: Icon(Icons.save_alt_outlined),
             )
