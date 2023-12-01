@@ -11,8 +11,8 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "calvo1345teste",
-    "email": "calvo@123.com",
+    "name": "Flepes Flepes",
+    "email": "felepele@email.com",
     "password": "A1234567.a"
 }
 ### Update User
