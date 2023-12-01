@@ -1,5 +1,5 @@
 import { IPets } from "./IPetsInterfaces";
-import { IUser } from "./IUserInterfaces";
+import { IUser, IUserPet } from "./IUserInterfaces";
 
 export interface IUserRepository{
     findAll(): Promise<IUser[]>
@@ -9,4 +9,5 @@ export interface IUserRepository{
     delete(id: string): Promise<void>
     findUserByEmail(email: string): Promise<IUser>
     findPets(id: string): Promise<string[]>
+    receivePet(id: string, petId: string): Promise<void>
 }

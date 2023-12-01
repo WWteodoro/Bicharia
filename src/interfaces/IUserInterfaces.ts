@@ -62,3 +62,7 @@ export interface IUserCryptoRequest{
 export interface IUserGetPetsRequest{
     id: string;
 }
+
+export interface IUserPet{
+    pets: string[];
+}
