@@ -5,7 +5,6 @@ import 'package:telas_c/Pages/add.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/Pages/Petadicionar.dart';
-import 'package:telas_c/Pages/Pet_editar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

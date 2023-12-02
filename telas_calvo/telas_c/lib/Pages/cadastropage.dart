@@ -1,10 +1,9 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
-import 'package:telas_c/Pages/home.dart';
 
 class CadastroPage extends StatelessWidget {
   final nome = TextEditingController();

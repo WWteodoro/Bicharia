@@ -1,12 +1,9 @@
 
 import 'dart:convert';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:telas_c/servicos/dados_autenticados.dart';
-import 'package:telas_c/servicos/dados_autenticados.dart';
-import"package:telas_c/componentes/model_pet.dart";
+
 Future<void> Create_Pet(String pet_name, String type, String password,
-    String passwordconfirm, String photo, String id_user) async {
+    String passwordconfirm, String? photo, String id_user) async {
   final pet = http.post(
     Uri.parse(
       "http://localhost:3333/pets",
