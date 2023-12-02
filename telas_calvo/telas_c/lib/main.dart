@@ -10,10 +10,10 @@ import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/approute/AppRoute.dart';
-import 'package:telas_c/componentes/Pets.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
 import 'Pages/Petadicionar.dart';
+import 'componentes/model_pet.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {

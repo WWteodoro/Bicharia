@@ -39,6 +39,7 @@ Future<void> AutenticarUser(String email, String password,BuildContext context) 
     Dados_Usuario.email=email;
     Map<String, dynamic> userMap = jsonDecode(resposta.body);
     Dados_Usuario.nome=userMap["user"]["name"];
+    Dados_Usuario.id=userMap["user"]["id"];
   }else{
     throw Exception("Tente novamente"); 
   }

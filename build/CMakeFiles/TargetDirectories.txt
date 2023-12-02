@@ -1,0 +1,14 @@
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/telas_c.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/edit_cache.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/rebuild_cache.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/list_install_components.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/install.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/install/local.dir
+/home/guilherme/Desktop/Bicharia/build/CMakeFiles/install/strip.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/flutter_assemble.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/edit_cache.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/rebuild_cache.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/list_install_components.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/install.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/install/local.dir
+/home/guilherme/Desktop/Bicharia/build/flutter/CMakeFiles/install/strip.dir

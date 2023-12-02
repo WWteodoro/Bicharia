@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
-import 'package:telas_c/componentes/Pets.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 
@@ -22,10 +21,13 @@ class AdicionarAnimal extends StatelessWidget {
             onPressed: (){
               Navigator.pop(context);
             },
+            color: Colors.white,
           ),
-          title: Text(
+          title:Center(child: Center(child:Text(
             "Criar Pet",
-          ),
+            style:TextStyle(fontSize: 30,color: Colors.white,),
+          ) 
+          ),),
           backgroundColor: Colors.orange,
           actions: [
             IconButton(
@@ -37,7 +39,7 @@ class AdicionarAnimal extends StatelessWidget {
                     Navigator.of(context).pop();
                   }
                 },
-                icon: Icon(Icons.save_alt_outlined))
+                icon: Icon(Icons.save_alt_outlined),color: Colors.white,)
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),

@@ -51,7 +51,7 @@ class CadastroPage extends StatelessWidget {
                 decoration: const InputDecoration(
                     labelText: "Nome",
                     labelStyle: TextStyle(
-                      color: Colors.black87,
+                      color: Colors.black38,
                       fontWeight: FontWeight.w400,
                       fontSize: 20,
                     )),

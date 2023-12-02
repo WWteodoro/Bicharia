@@ -1,9 +1,10 @@
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
-
+import"package:telas_c/componentes/model_pet.dart";
 Future<void> Create_Pet(String pet_name, String type, String password,
     String passwordconfirm, String photo, String id_user) async {
   final pet = http.post(
@@ -34,13 +35,20 @@ Future<void> Deletar_pet(String id) async {
   );
 }
 Future<void> update_pet_data(
-  String id, String nome) async {
+  String id_user,String id,String nome,String tipo) async {
   final response =
       await http.put(Uri.parse('http://localhost:3333/users/' + id),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
           },
-          body: jsonEncode(<String, String>{
-            'name': nome,
-          }));
+          body: jsonEncode(<String,String>{
+          "newId":id,
+          "name": nome,
+          "type": tipo,
+          })
+    );
+}
+Future<http.Response> Petfetch(String id) async {
+  final response = await http.get(Uri.parse('http://localhost:3333/pets/'+id));
+  return response;
 }
