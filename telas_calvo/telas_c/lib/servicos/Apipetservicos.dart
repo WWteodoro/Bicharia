@@ -45,7 +45,8 @@ Future<void> update_pet_data(
           })
     );
 }
-Future<http.Response> Petfetch(String id) async {
+Future<List<Map<String,dynamic>>> Petfetch(String id) async {
   final response = await http.get(Uri.parse('http://localhost:3333/pets/'+id));
-  return response;
+  List<Map<String,dynamic>> lista_de_pets=jsonDecode(response.body)["owners"];
+  return lista_de_pets;
 }
