@@ -6,6 +6,7 @@ import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/Pages/Petadicionar.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
+import 'package:telas_c/Pages/cadastropet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [HomeTab(), Add(), PetsTab()];
+  final List<Widget> _children = [HomeTab(), Add(), PetCadastros()];
 
   void onTabPressed(int index) {
     setState(() {
@@ -94,13 +95,5 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     // Replace with the content for the Home tab
     return Center(child: Text('Home Tab Content'));
-  }
-}
-
-class PetsTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Replace with the content for the Pets tab
-    return Center(child: Text('Pets Tab Content'));
   }
 }
