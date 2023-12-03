@@ -10,10 +10,8 @@ export class CreatePetController {
         this.createPetService = new CreatePetService(petsRepo, userRepo);
     }
 
-    async handle(req: Request, res: Response): Promise<void> {
-        try {
-            const { name, type, password, confirmPassword, photo, owners } = req.body;
-
+    async handle(req: Request, res: Response): Promise<void> {    
+        const { name, type, password, confirmPassword, photo, owners, userId } = req.body;
             await this.createPetService.execute({
                 name,
                 type,
@@ -21,17 +19,9 @@ export class CreatePetController {
                 confirmPassword,
                 photo,
                 owners,
+                userId
             });
 
-            res.status(201).json({ message: 'Pet criado com sucesso!' });
-        } catch (error) {
-            console.error(error);
-
-            if (error instanceof Error) {
-                res.status(500).json({ message: `Erro interno no servidor - ${error.message}` });
-            } else {
-                res.status(500).json({ message: 'Erro interno no servidor - Erro desconhecido' });
-            }
         }
-    }
 }
+

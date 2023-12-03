@@ -1,4 +1,4 @@
-import { IPets } from "../interfaces/IPetsInterfaces"
+import { IPets, IPetsOwners } from "../interfaces/IPetsInterfaces"
 
 export interface IPetsRepository {
     findAll(): Promise<IPets[]>;
