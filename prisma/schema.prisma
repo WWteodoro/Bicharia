@@ -27,7 +27,8 @@ model user {
   name String @db.VarChar(255)
   email String @unique @db.VarChar(255)
   password String @db.VarChar(255)
-  pet pet[]
+  pets pet[]
+  petsId String[] @db.VarChar(255)
   posts post[]
   reactions interation[]
   createdAt DateTime @default(now())

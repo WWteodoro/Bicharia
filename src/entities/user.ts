@@ -8,7 +8,7 @@ export class User{
     password: IUser['password'];
     confirmEmail: IUser['confirmEmail'];
     confirmPassword: IUser['confirmPassword'];
-    pets: IUser['pets']
+    petsId: IUser['petsId'];
     createdAt: IUser['createdAt'];
     updatedAt: IUser['updatedAt'];
 
@@ -19,7 +19,7 @@ export class User{
         this.password = props.password;
         this.confirmEmail = props.confirmEmail;
         this.confirmPassword = props.confirmPassword;
-        this.pets = props.pets;
+        this.petsId = props.petsId;
         this.createdAt = props.createdAt || new Date();
         this.updatedAt = new Date();
     }
@@ -32,7 +32,7 @@ export class User{
             password: this.password,
             confirmEmail: this.confirmEmail,
             confirmPassword: this.confirmPassword,
-            pets: this.pets,
+            petsId: this.petsId,
             createdAt: this.createdAt,
             updatedAt: this.updatedAt
                 

@@ -47,6 +47,19 @@ Future<void> AutenticarUser(String email, String password,BuildContext context) 
   }
 }
 
+Future<void> queryByEmail(String email, String nome) async {
+    final response = await http.post(
+      Uri.parse('http://localhost:3333/users/invite'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8'
+      },
+      body: jsonEncode(<String, String>{
+          'email' : email,
+          'name' : nome,
+      })
+    );
+  }
+
 Future<void> Deletar_user(String id) async {
   final http.Response response = await http.delete(
     Uri.parse('http://localhost:3333/users/' + id),

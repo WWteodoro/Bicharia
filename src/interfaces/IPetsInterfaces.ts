@@ -4,7 +4,6 @@ export interface IPets {
     id: string;
     name: string;
     type: string;
-    owners?: IUser[];
     password: string;
     confirmPassword?: string;
     photo: string;
@@ -19,7 +18,7 @@ export interface IPetsCreateRequest{
     confirmPassword?: string;
     photo: string;
     owners?: IUser[];
-
+    userId: string; 
 }
 
 
@@ -38,5 +37,10 @@ export interface IPetsUpdateRequest{
 }
 
 export interface IPetsDeleteRequest{
+    id: string;
+}
+
+export interface IPetsOwners{
+    owners: IUser[];
     id: string;
 }
