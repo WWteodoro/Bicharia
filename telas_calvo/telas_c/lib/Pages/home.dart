@@ -9,6 +9,7 @@ import 'package:telas_c/Pages/Petadicionar.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/Pages/feed.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [HomeTab(), Add(), PetCadastro()];
+  final List<Widget> _children = [FeedPosts(), Add(), PetCadastro()];
 
   void onTabPressed(int index) {
     setState(() {

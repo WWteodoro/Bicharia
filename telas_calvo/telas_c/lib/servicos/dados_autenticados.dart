@@ -1,7 +1,12 @@
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/componentes/model_post.dart';
 
 class Pets{ 
   static List<Pet> pets=[];
+}
+
+class Posts{
+  static List<PostModel> list_postar=[];
 }
 
 class Dados_Usuario {
