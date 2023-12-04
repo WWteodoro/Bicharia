@@ -7,17 +7,12 @@ import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:file_picker/file_picker.dart';
 
 Future<List<Pet>>client_pets_id(String id)async{
-  final pets_id= await http.get(Uri.parse("http://localhost:3333/users/pets/"+));
-  final pet_data =jsonDecode(pets_id.body);
+  final pet_f=await http.get(Uri.parse("http://localhost:3333/pets/")); 
+  final pet_data=jsonDecode(pet_f.body) as List<Map<String,dynamic>>;
   print(pet_data);
   List<Pet>list=[];
   for (var i = 0;i < pet_data.length; i++) {
-    print("loop");
-    final pet_f=await http.get(Uri.parse("http://localhost:3333/pets/"+pet_data[i]));
-    print("Obteve o pet");
-    Map<String,dynamic>pet=jsonDecode(pet_f.body);
-    print(pet);
-    list.add(Pet(id: pet["id"], nome:pet["name"], tipo: pet["type"], url: pet["photo"]));
+    list.add(Pet(id: pet_data[i]["id"], nome:pet_data[i]["name"], tipo: pet_data[i]["type"], url: pet_data[i]["photo"]));
   }
   return list;
 }
