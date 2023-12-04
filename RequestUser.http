@@ -26,13 +26,13 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/a937ad56-1e25-4902-b516-9c6ee844b5e2s
+DELETE http://localhost:3333/users/c8d619c5-9f99-404d-b21b-d0ffdc843ffd
 
 ### Listar pets do user
-GET http://localhost:3333/users/pets/a3afc032-10b0-4014-ad04-f61f1a16ca6a
+GET http://localhost:3333/users/pets/a85e53c8-2c6d-4da1-ac4b-93ba8f89ec93
 
 ### Convidar Usuario por email
-POST http://localhost:3333/users/invite/clayson@email.com
+POST http://localhost:3333/users/invite/email.com
 Content-Type: application/json
 
 {

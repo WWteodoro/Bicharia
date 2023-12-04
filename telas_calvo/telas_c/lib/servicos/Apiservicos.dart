@@ -2,8 +2,25 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/Pages/approute/AppRoute.dart';
+import 'package:telas_c/componentes/model_pet.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:file_picker/file_picker.dart';
+
+Future<List<Pet>>client_pets_id(String id)async{
+  final pets_id= await http.get(Uri.parse("http://localhost:3333/users/pets/"+id));
+  final pet_data =jsonDecode(pets_id.body);
+  print(pet_data);
+  List<Pet>list=[];
+  for (var i = 0;i < pet_data.length; i++) {
+    print("loop");
+    final pet_f=await http.get(Uri.parse("http://localhost:3333/pets/"+pet_data[i]));
+    print("Obteve o pet");
+    Map<String,dynamic>pet=jsonDecode(pet_f.body);
+    print(pet);
+    list.add(Pet(id: pet["id"], nome:pet["name"], tipo: pet["type"], url: pet["photo"]));
+  }
+  return list;
+}
 Future<void> createCliente(String name, String email, String password) async {
   final response = await http.post(
       Uri.parse(

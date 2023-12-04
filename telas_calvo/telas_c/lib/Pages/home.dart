@@ -6,7 +6,9 @@ import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/Pages/Petadicionar.dart';
-
+import 'package:telas_c/servicos/Apiservicos.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
+import 'package:telas_c/componentes/model_pet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,7 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [HomeTab(), Add(), PetCadastros()];
+  final List<Widget> _children = [HomeTab(), Add(), PetCadastro()];
 
   void onTabPressed(int index) {
     setState(() {
@@ -32,13 +34,10 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home", style: TextStyle(color: Colors.white)),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: Icon(Icons.logo_dev),
             color: Colors.white,
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
+            onPressed: ()async {
+              Pets.pets=await client_pets_id(Dados_Usuario.id);
             },
           )
         ],

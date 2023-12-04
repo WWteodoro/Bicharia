@@ -1,7 +1,13 @@
+import 'package:telas_c/componentes/model_pet.dart';
+
+class Pets{ 
+  static List<Pet> pets=[];
+}
+
 class Dados_Usuario {
-  static late String id = "41dba0b9-9cd9-4835-bc32-4fe3dc561370";
-  static late String nome = "NEY_CALCOVO";
-  static late String email = "nenene@mmmmm.com";
+  static late String id;
+  static late String nome ;
+  static late String email;
 }
 
 class User {

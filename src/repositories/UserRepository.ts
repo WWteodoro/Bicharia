@@ -11,9 +11,11 @@ export class UserRepository implements IUserRepository{
         private cryptoRepo: ICryptoRepository,
       ) {}
     async listUserPets(id: string): Promise<string[]> {
-        const result = await prisma.user.findFirst({
+        /* const result = await prisma.user.findFirst({
             where:{ id },
-        })
+        }) */
+
+        
 
         if(!result) throw new AppError('User not found')
         
