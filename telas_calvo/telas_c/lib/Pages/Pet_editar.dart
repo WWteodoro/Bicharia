@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:telas_c/Pages/cadastropage.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 class Editar_animal extends StatelessWidget {
   final Pet dog;
@@ -17,8 +19,10 @@ class Editar_animal extends StatelessWidget {
           ),
           backgroundColor: Colors.orange,
           actions: [
-            IconButton(onPressed: () {
-              update_pet_data(Dados_Usuario.id,dog.id, dog.nome,dog.tipo);
+            IconButton(onPressed: () async {
+              await update_pet_data(Dados_Usuario.id,dog.id, dog.nome,dog.tipo);
+              Pets.pets= await client_pets_id(Dados_Usuario.id);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>CadastroPage()));
             },color: Colors.white, 
             icon: Icon(Icons.save_alt_outlined),
             )

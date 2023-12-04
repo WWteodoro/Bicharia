@@ -59,8 +59,9 @@ Future<void> AutenticarUser(String email, String password,BuildContext context) 
     Map<String, dynamic> userMap = jsonDecode(resposta.body);
     Dados_Usuario.nome=userMap["user"]["name"];
     Dados_Usuario.id=userMap["user"]["id"];
+    Pets.pets=await client_pets_id(Dados_Usuario.id);
   }else{
-    throw Exception("Tente novamente"); 
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Dados invalidos")));
   }
 }
 

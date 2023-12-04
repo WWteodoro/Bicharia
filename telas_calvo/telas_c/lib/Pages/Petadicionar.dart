@@ -32,12 +32,13 @@ class AdicionarAnimal extends StatelessWidget {
           backgroundColor: Colors.orange,
           actions: [
             IconButton(
-                onPressed: () {
+                onPressed: ()async {
                   final val = _form.currentState?.validate();
                   if (val == null || val == true) {
-                    Create_Pet(nome.text, tipo.text, senha.text,
+                    await Create_Pet(nome.text, tipo.text, senha.text,
                         senha_confirmar.text,url, Dados_Usuario.id);
-                    Navigator.of(context).pop();
+                    Pets.pets=await client_pets_id(Dados_Usuario.id);
+                    Navigator.push(context, MaterialPageRoute(builder: builder));
                   }
                 },
                 icon: Icon(Icons.save_alt_outlined),color: Colors.white,)
@@ -55,7 +56,6 @@ class AdicionarAnimal extends StatelessWidget {
               iconSize: 75,
               onPressed: () async{
                 url=await pickImage();
-                print(url);
               },
             ),
             radius: 75,

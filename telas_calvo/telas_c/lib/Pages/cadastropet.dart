@@ -18,10 +18,8 @@ class PetCadastro extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<PetCadastro> {
-
   @override
   Widget build(BuildContext context) {
-  client_pets_id(Dados_Usuario.id);
   return Scaffold(
     body: ListView.builder(
           itemCount: Pets.pets.length,

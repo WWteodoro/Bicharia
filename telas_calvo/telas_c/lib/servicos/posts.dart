@@ -1,11 +1,8 @@
 import 'dart:convert';
-import 'dart:ffi';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:telas_c/componentes/model_post.dart';
 
 
-Future<void> CreatePost(String idpet, String id) async {
+Future<void> CreatePost(String photo, String id, String text) async {
     final response = await http.post(
       Uri.parse('http://localhost:3333/post'),
       headers: <String, String>{
@@ -21,7 +18,7 @@ Future<void> CreatePost(String idpet, String id) async {
 
 Future<void> ApagarPost(String PostId) async {
   final response = await http.delete(
-    Uri.parse('http://localhost:3333/post/list'+),
+    Uri.parse('http://localhost:3333/post/list'+PostId),
     headers: <String, String>{
       'Content-Type' : 'application/json; charset=UTF-8'
     },

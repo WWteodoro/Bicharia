@@ -11,10 +11,11 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "Clayson",
-    "email": "clayson@email.com",
+    "name": "anya",
+    "email": "fotger@.com",
     "password": "A1234567.a"
 }
+
 ### Update User
 PUT http://localhost:3333/users/ca8d6ec8-1e4c-4373-9e4f-3cc9c7f5a395
 Content-Type: application/json
@@ -26,10 +27,10 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/c8d619c5-9f99-404d-b21b-d0ffdc843ffd
+DELETE http://localhost:3333/users/11a8b0a2-cbe7-4850-a563-f2f28152b576
 
 ### Listar pets do user
-GET http://localhost:3333/users/pets/a85e53c8-2c6d-4da1-ac4b-93ba8f89ec93
+GET http://localhost:3333/users/pets/c7d2d121-4168-4800-bfed-6eb2a07b9daa
 
 ### Convidar Usuario por email
 POST http://localhost:3333/users/invite/email.com
@@ -37,5 +38,9 @@ Content-Type: application/json
 
 {
     "petId": "wzYjuPOCr"
-    
 }
+
+
+// explode o back end com cntrl c
+// e da --> yarn start:dev <-- de volta
+// pra gente ver

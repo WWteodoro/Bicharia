@@ -6,14 +6,14 @@ POST http://localhost:3333/pets
 Content-Type: application/json
 
 {
-  "name": "Vo Cleus444",
+  "name": "sasasa",
   "type": "Humano",
   "password": "A.1234567a",
   "confirmPassword": "A.1234567a", 
   "photo": "URLDaFotoDoPet",
   "owners": {
     "connect": {
-      "id": "02674c9e-08cc-4226-81cf-010551b14866"
+      "id": "4b09fd96-4331-4290-8e08-59a5d87220d2"
     }
   }
 }
@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Get pet id
-GET http://localhost:3333/pets/VMx1BeiXx
+GET http://localhost:3333/pets/cCvDz78mp
 
 
 ### Delete Pet

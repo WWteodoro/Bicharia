@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   void onTabPressed(int index) {
     setState(() {
+      
       _currentIndex = index;
     });
   }
@@ -34,10 +35,13 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home", style: TextStyle(color: Colors.white)),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.logo_dev),
+            icon: Icon(Icons.login_outlined),
             color: Colors.white,
             onPressed: ()async {
-              Pets.pets=await client_pets_id(Dados_Usuario.id);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
             },
           )
         ],

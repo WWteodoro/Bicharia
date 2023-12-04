@@ -11,15 +11,26 @@ export class UserRepository implements IUserRepository{
         private cryptoRepo: ICryptoRepository,
       ) {}
     async listUserPets(id: string): Promise<string[]> {
-        /* const result = await prisma.user.findFirst({
+         /* const result = await prisma.user.findFirst({
             where:{ id },
         }) */
 
+        const array = await prisma.user.findMany()
+        let i = 0;
+        console.log(id)
+        const tam = array.length
+        console.log(tam)
+        while(i < tam){
+            let a: string = array[i].id
+            if(a === id) return array[i].petsId 
+            i++
+        }
+        console.log(array[i-1])
         
 
-        if(!result) throw new AppError('User not found')
+        return ["calvo,", "deu", "erro"]
+
         
-        return result.petsId
     }
 
     async inviteUserByEmail(email: string, idPet: string): Promise<void> {
