@@ -22,7 +22,11 @@ class _MyWidgetState extends State<PetCadastro> {
   return Scaffold(
     body: ListView.builder(
           itemCount: Pets.pets.length,
-          itemBuilder: (ctx, i) => PetTitle(Pets.pets.elementAt(i))),
+          itemBuilder: (ctx, i) => Builder(
+            builder: (context) {
+              return PetTitle(Pets.pets.elementAt(i));
+            }
+          )),
     );
   }
    

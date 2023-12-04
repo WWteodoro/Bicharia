@@ -18,7 +18,7 @@ const cryptoRepo: ICryptoRepository = new CryptoRepository()
 const userRepo: IUserRepository = new UserRepository(cryptoRepo);
 
 const CreatePet = new CreatePetController(petsRepo, userRepo);
-const DeletePetById = new DeletePetByIdController(petsRepo);
+const DeletePetById = new DeletePetByIdController(petsRepo, userRepo);
 const GetAllPets = new GetAllPetsController(petsRepo);
 const UpdatePet = new UpdatePetController(petsRepo)
 const GetPetbyId = new GetPetByIdController(petsRepo);

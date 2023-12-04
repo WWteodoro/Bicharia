@@ -7,7 +7,7 @@ import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:file_picker/file_picker.dart';
 
 Future<List<Pet>>client_pets_id(String id)async{
-  final pets_id= await http.get(Uri.parse("http://localhost:3333/users/pets/"+id));
+  final pets_id= await http.get(Uri.parse("http://localhost:3333/users/pets/"+));
   final pet_data =jsonDecode(pets_id.body);
   print(pet_data);
   List<Pet>list=[];

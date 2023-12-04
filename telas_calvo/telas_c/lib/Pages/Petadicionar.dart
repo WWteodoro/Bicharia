@@ -38,7 +38,7 @@ class AdicionarAnimal extends StatelessWidget {
                     await Create_Pet(nome.text, tipo.text, senha.text,
                         senha_confirmar.text,url, Dados_Usuario.id);
                     Pets.pets=await client_pets_id(Dados_Usuario.id);
-                    
+                    Navigator.of(context).pop();
                   }
                 },
                 icon: Icon(Icons.save_alt_outlined),color: Colors.white,)

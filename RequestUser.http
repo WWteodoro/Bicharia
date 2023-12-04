@@ -11,8 +11,8 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "anya",
-    "email": "fotger@.com",
+    "name": "flepes flepes",
+    "email": "flepes@email.com",
     "password": "A1234567.a"
 }
 
@@ -27,7 +27,7 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/11a8b0a2-cbe7-4850-a563-f2f28152b576
+DELETE http://localhost:3333/users/7134a540-0635-432b-b096-a57667a5ba75
 
 ### Listar pets do user
 GET http://localhost:3333/users/pets/c7d2d121-4168-4800-bfed-6eb2a07b9daa
