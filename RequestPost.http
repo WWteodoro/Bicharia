@@ -1,0 +1,20 @@
+### POST UM POST
+POST http://localhost:3333/post
+Content-Type: application/json
+
+{
+
+"photo" : "URLdaFOtoo",
+"userId" : "02674c9e-08cc-4226-81cf-010551b14866",
+"text" : "oi oioi oioiiii lindinho oi iioi oi bichinho"
+
+}
+
+### LIST UM POST (id do user)
+GET  http://localhost:3333/post/list/02674c9e-08cc-4226-81cf-010551b14866
+
+### GET UM POST (id do post)
+GET  http://localhost:3333/post/get/65e4f193-6254-4a76-bda6-14c297960cba
+
+### DELETE UM POST (id do post)
+DELETE http://localhost:3333/post/65e4f193-6254-4a76-bda6-14c297960cba

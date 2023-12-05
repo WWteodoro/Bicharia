@@ -1,11 +1,13 @@
-import { IPets } from "../interfaces/IPetsInterfaces";
+import { AppError } from "../errors/AppError";
+import { IPets, IPetsOwners } from "../interfaces/IPetsInterfaces";
 import { IPetsRepository } from "../interfaces/IPetsRepository";
 import { PrismaClient } from "@prisma/client";
+import { IUser } from "../interfaces/IUserInterfaces";
 
 const prisma = new PrismaClient();
 
 export class PetsRepository implements IPetsRepository {
-
+   
   async findAll(): Promise<IPets[]> {
     const result = await prisma.pet.findMany({
       include: {
@@ -25,7 +27,7 @@ async findOnePet(id: string): Promise<IPets>{
   return result
 }
 
-async createPet(props: Omit<IPets, 'owners'>, owners?: string ): Promise<void> {
+async createPet(props: IPets ): Promise<void> {
     await prisma.pet.create({
       data: props
   })

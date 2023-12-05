@@ -1,14 +1,15 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 import 'package:telas_c/servicos/Apipetservicos.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 
 class AdicionarAnimal extends StatelessWidget {
   const AdicionarAnimal({super.key});
   @override
   Widget build(BuildContext context) {
-    final url = TextEditingController();
+    late String? url;
     final senha = TextEditingController();
     final senha_confirmar = TextEditingController();
     final nome = TextEditingController();
@@ -31,11 +32,12 @@ class AdicionarAnimal extends StatelessWidget {
           backgroundColor: Colors.orange,
           actions: [
             IconButton(
-                onPressed: () {
+                onPressed: ()async {
                   final val = _form.currentState?.validate();
                   if (val == null || val == true) {
-                    Create_Pet(nome.text, tipo.text, senha.text,
-                        senha_confirmar.text, url.text, Dados_Usuario.id);
+                    await Create_Pet(nome.text, tipo.text, senha.text,
+                        senha_confirmar.text,url, Dados_Usuario.id);
+                    Pets.pets=await client_pets_id(Dados_Usuario.id);
                     Navigator.of(context).pop();
                   }
                 },
@@ -46,13 +48,14 @@ class AdicionarAnimal extends StatelessWidget {
           child: Form(
               key: _form,
               child: Column(
-                children: [
-                  CircleAvatar(
+            children: [
+            CircleAvatar(
             child: IconButton(
               color: Colors.white,
               icon: Icon(Icons.pets),
               iconSize: 75,
-              onPressed: () {
+              onPressed: () async{
+                url=await pickImage();
               },
             ),
             radius: 75,

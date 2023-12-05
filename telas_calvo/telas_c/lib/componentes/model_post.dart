@@ -5,10 +5,6 @@ class PostModel {
   final String photo;
   final String userId;
   final String text;
-
-
-  int likesCount;
-
   PostModel(
       {required this.id,
       required this.dated,

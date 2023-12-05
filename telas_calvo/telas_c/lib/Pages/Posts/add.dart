@@ -1,6 +1,9 @@
 // ignore_for_file: unnecessary_new, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
+import 'package:telas_c/servicos/posts.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});
@@ -19,7 +22,10 @@ class _AddState extends State<Add> {
       actions: <Widget>[
         TextButton(
           style: TextButton.styleFrom(foregroundColor: Colors.white,),
-          onPressed: null,
+          onPressed:()async{
+            CreatePost(pickImage as String ,Dados_Usuario.id, text);
+          }
+          ,
           child: Text('Post'))
       ],
     ),

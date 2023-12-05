@@ -6,14 +6,14 @@ POST http://localhost:3333/pets
 Content-Type: application/json
 
 {
-  "name": "Vo Cleusa",
-  "type": "Humano",
+  "name": "Belinha",
+  "type": "Cachorro",
   "password": "A.1234567a",
   "confirmPassword": "A.1234567a", 
   "photo": "URLDaFotoDoPet",
   "owners": {
     "connect": {
-      "id": "82e43531-2e66-43fb-9373-7e34dce5d2a8"
+      "id": "fe59161f-720e-4258-b26c-341ca02cfb27"
     }
   }
 }
@@ -28,8 +28,9 @@ Content-Type: application/json
   "type": "marmota",
 }
 
-###Get pet by user id
-GET http://localhost:3333/pets/82e43531-2e66-43fb-9373-7e34dce5d2a8 
+### Get pet id
+GET http://localhost:3333/pets/vb4Gumt4U
+
 
 ### Delete Pet
-DELETE http://localhost:3333/pets/Yj668suiFD
+DELETE http://localhost:3333/pets/e0yGWNs9Xv

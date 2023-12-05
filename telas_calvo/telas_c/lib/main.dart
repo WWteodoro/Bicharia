@@ -12,7 +12,6 @@ import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/approute/AppRoute.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
-import 'Pages/Petadicionar.dart';
 import 'componentes/model_pet.dart';
 void main() => runApp(const MyApp());
 

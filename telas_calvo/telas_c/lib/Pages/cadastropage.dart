@@ -1,10 +1,9 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
-import 'package:telas_c/Pages/home.dart';
 
 class CadastroPage extends StatelessWidget {
   final nome = TextEditingController();
@@ -127,12 +126,12 @@ class CadastroPage extends StatelessWidget {
                 height: 40,
               ),
               GestureDetector(
-                onTap: () {
+                onTap: ()async {
                   if (email.text == confirmacaoemail.text &&
                       confirmar.text == senha.text &&
                       email.text != "" &&
                       senha.text != "") {
-                    createCliente(nome.text, email.text, senha.text);
+                     await createCliente(nome.text, email.text, senha.text);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Usuário Cadastrado')),
                     );
