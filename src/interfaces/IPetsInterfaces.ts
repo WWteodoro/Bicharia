@@ -4,8 +4,6 @@ export interface IPets {
     id: string;
     name: string;
     type: string;
-    password: string;
-    confirmPassword?: string;
     photo: string;
     createdAt?: Date;
     updatedAt?: Date;
@@ -14,8 +12,6 @@ export interface IPets {
 export interface IPetsCreateRequest{
     name: string;
     type: string;
-    password: string;
-    confirmPassword?: string;
     photo: string;
     owners?: IUser[];
     userId: string; 
@@ -31,8 +27,6 @@ export interface IPetsUpdateRequest{
     newId?: string;
     type: string;
     name: string;
-    password: string;
-    confirmPassword?: string;
     photo: string;
 }
 

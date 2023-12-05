@@ -7,13 +7,11 @@ Content-Type: application/json
 
 {
   "name": "Belinha",
-  "type": "Cachorro",
-  "password": "A.1234567a",
-  "confirmPassword": "A.1234567a", 
+  "type": "Cachorro", 
   "photo": "URLDaFotoDoPet",
   "owners": {
     "connect": {
-      "id": "fe59161f-720e-4258-b26c-341ca02cfb27"
+      "id": "f571a065-c870-4d05-8a6f-4f0099d8d3fe"
     }
   }
 }
@@ -33,4 +31,4 @@ GET http://localhost:3333/pets/vb4Gumt4U
 
 
 ### Delete Pet
-DELETE http://localhost:3333/pets/e0yGWNs9Xv
+DELETE http://localhost:3333/pets/OEOZZw9LO
