@@ -24,8 +24,7 @@ class _AddState extends State<Add> {
           style: TextButton.styleFrom(foregroundColor: Colors.white,),
           onPressed:()async{
             CreatePost(pickImage as String ,Dados_Usuario.id, text);
-          }
-          ,
+          },
           child: Text('Post'))
       ],
     ),
