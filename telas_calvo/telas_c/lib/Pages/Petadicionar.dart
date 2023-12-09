@@ -31,17 +31,6 @@ class AdicionarAnimal extends StatelessWidget {
           ),),
           backgroundColor: Colors.orange,
           actions: [
-            IconButton(
-                onPressed: ()async {
-                  final val = _form.currentState?.validate();
-                  if (val == null || val == true) {
-                    await Create_Pet(nome.text, tipo.text, senha.text,
-                        senha_confirmar.text,url, Dados_Usuario.id);
-                    Pets.pets=await client_pets_id(Dados_Usuario.id);
-                    Navigator.of(context).pop();
-                  }
-                },
-                icon: Icon(Icons.save_alt_outlined),color: Colors.white,)
           ]),
       body: Padding(
           padding: EdgeInsets.all(10),
@@ -79,16 +68,28 @@ class AdicionarAnimal extends StatelessWidget {
                           return "Campos vazio";
                         }
                         return null;
-                      }),
-                  TextFormField(
-                      controller: senha,
-                      decoration: InputDecoration(labelText: "Senha"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      }),
+                      }),SizedBox(
+                        height: 20,
+                      ),
+              Container(
+              height: 150,
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: ()async {
+                  final val = _form.currentState?.validate();
+                  if (val == null || val == true) {
+                    await Create_Pet(nome.text, tipo.text, senha.text,
+                    senha_confirmar.text,url, Dados_Usuario.id);
+                    Pets.pets=await client_pets_id(Dados_Usuario.id);
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: const Text(
+                  "Criar Pet",
+                  style: TextStyle(color: Colors.orange,fontSize: 15),
+                ),
+              ),                    
+                )
                 ],
               ))),
     );

@@ -19,9 +19,7 @@ class _FeedPostsState extends State<FeedPosts> {
   }
 
   Future<void> carregarPosts() async {
-    List<PostModel> listaPosts = await listar_posts(Dados_Usuario.id);
     setState(() {
-      posts = listaPosts;
     });
   }
 

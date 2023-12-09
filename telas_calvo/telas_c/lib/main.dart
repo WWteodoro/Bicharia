@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Bicharia',
-          home: CadastroPage(),
+          home: AdicionarAnimal(),
           routes: {
             // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
             Routaaas.Home: (_) => HomePage(),
