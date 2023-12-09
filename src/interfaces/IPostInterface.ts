@@ -6,6 +6,7 @@ export interface IPost{
   photo: string;
   text: string;
   userId: string;
+  petId: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -14,6 +15,7 @@ export interface IPostCreateRequest{
     photo: string;
     text: string;
     userId: string;
+    petId: string;
 }
 
 export interface IPostGetRequest{
@@ -26,4 +28,8 @@ export interface IPostGetByUserRequest{
 
 export interface IPostDeleteRequest{
     id:string;
+}
+
+export interface IFeedRequest{
+    userId: string;
 }

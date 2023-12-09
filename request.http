@@ -39,3 +39,14 @@ Content-Type: application/json
     "petId": "wzYjuPOCr"
     
 }
+
+### Create Post
+POST http://localhost:3333/users/post
+Content-Type: application/json
+
+{
+    "photo": "Selfie",
+    "text": "Oia q lindao",
+    "userId": "0e3347ac-1e5b-46ab-87a3-4f260cf3894a"
+    
+}

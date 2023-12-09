@@ -11,11 +11,12 @@ datasource db {
 }
 
 model pet {
-  id String @id
+  id String @id @db.Uuid
   name String @db.VarChar(255)
   type String @db.VarChar(255)
   password String @db.VarChar(255)
   owners user[]
+  posts post[]
   photo String @db.VarChar(255)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -41,6 +42,8 @@ model post {
   photo String @db.VarChar(255)
   user user @relation(fields: [userId], references: [id])
   userId String @db.Uuid
+  pet pet @relation(fields: [petId], references: [id])
+  petId String @db.Uuid
   text String @db.VarChar(255)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
