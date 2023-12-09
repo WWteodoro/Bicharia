@@ -17,6 +17,7 @@ class AdicionarAnimal extends StatelessWidget {
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
+          centerTitle: true,
           leading:IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: (){
@@ -24,15 +25,13 @@ class AdicionarAnimal extends StatelessWidget {
             },
             color: Colors.white,
           ),
-          title:Center(child: Center(child:Text(
+          title:Text(
             "Criar Pet",
-            style:TextStyle(fontSize: 30,color: Colors.white,),
-          ) 
-          ),),
+            style:TextStyle(fontSize: 28,color: Colors.white,),
+          ), 
           backgroundColor: Colors.orange,
-          actions: [
-          ]),
-      body: Padding(
+          ),
+      body:Padding(
           padding: EdgeInsets.all(10),
           child: Form(
               key: _form,
@@ -71,8 +70,8 @@ class AdicionarAnimal extends StatelessWidget {
                       }),SizedBox(
                         height: 20,
                       ),
-              Container(
-              height: 150,
+              Center(child:Container(
+              height: 60,
               alignment: Alignment.center,
               child: ElevatedButton(
                 onPressed: ()async {
@@ -86,10 +85,10 @@ class AdicionarAnimal extends StatelessWidget {
                 },
                 child: const Text(
                   "Criar Pet",
-                  style: TextStyle(color: Colors.orange,fontSize: 15),
+                  style: TextStyle(color: Colors.orange,fontSize: 20),
                 ),
               ),                    
-                )
+                ) ,)
                 ],
               ))),
     );
