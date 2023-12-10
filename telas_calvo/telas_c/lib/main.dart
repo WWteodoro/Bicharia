@@ -23,14 +23,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-        Pet dog=Pet(id: "0000000", nome: "senha", tipo: "god", url: "lslsl");
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Bicharia',
-          home: Invite(dog),
+          home: CadastroPage(),
           routes: 
           {
-            // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
             Routaaas.Home: (_) => HomePage(),
             Routaaas.Login: (_) => LoginPage(),
             Routaaas.Cadastro_user: (_) => CadastroPage(),

@@ -2,8 +2,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<void> Create_Pet(String pet_name, String type, String password,
-    String passwordconfirm, String? photo, String id_user) async {
+Future<void> Create_Pet(String pet_name, String type, String? photo, String id_user) async {
   final pet = http.post(
     Uri.parse(
       "http://localhost:3333/pets",
@@ -14,8 +13,6 @@ Future<void> Create_Pet(String pet_name, String type, String password,
     body: jsonEncode(<String, dynamic>{
       "name": pet_name,
       "type": type,
-      "password": password,
-      "confirmPassword": passwordconfirm,
       "photo": photo,
       "owners": {
         "connect": {"id": id_user}

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
+import 'package:telas_c/Pages/invite.dart';
 import 'package:telas_c/componentes/model_pet.dart';
 import 'package:telas_c/servicos/Apipetservicos.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
@@ -34,8 +35,11 @@ class PetTitle extends StatelessWidget {
                 Deletar_pet(dog.id);
                 Pets.pets=await client_pets_id(Dados_Usuario.id);
               }, icon: Icon(Icons.delete)),
-              IconButton(onPressed: ()async {
-                
+              IconButton(onPressed: (){
+                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Invite(dog)));
               }, icon: Icon(Icons.email))
             ],
           ),

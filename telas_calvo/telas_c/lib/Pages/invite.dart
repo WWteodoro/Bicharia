@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
 class Invite extends StatelessWidget {
   late Pet dog;
   Invite(Pet dog, {super.key}){
@@ -47,19 +48,6 @@ class Invite extends StatelessWidget {
             SizedBox(
               height: 10,
             ),TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                  labelText: "Chave Pet",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
-              style: const TextStyle(fontSize: 20),
-              controller: pet, 
-            ),SizedBox(
-              height: 10,
-            ),TextFormField(
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(
                   labelText: "E-mail",
@@ -73,7 +61,11 @@ class Invite extends StatelessWidget {
             ),SizedBox(
               height: 80,
             ),
-            Container(
+            GestureDetector(
+              onTap: ()async{
+                await invite(email.text, dog.id,context);
+              },
+              child: Container(
                 height: 50,
                 width: 50,
                 padding: const EdgeInsets.all(8),
@@ -94,6 +86,7 @@ class Invite extends StatelessWidget {
                       ),
                     ]),
               ),
+            )
           ],
         ),
       ),
