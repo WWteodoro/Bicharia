@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telas_c/componentes/model_post.dart';
+import 'package:telas_c/componentes/Postmodel.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:telas_c/servicos/posts.dart'; // Importe seu arquivo posts.dart
 
@@ -14,13 +14,19 @@ class _FeedPostsState extends State<FeedPosts> {
   @override
   void initState() {
     super.initState();
-    // Carregue os posts ao iniciar o widget
     carregarPosts();
   }
 
   Future<void> carregarPosts() async {
-    setState(() {
-    });
+    try {
+      final List<PostModel> postsCarregados = await Feed(Dados_Usuario.id);
+
+      setState(() {
+        posts = postsCarregados;
+      });
+    } catch (error) {
+      print('Erro ao carregar posts: $error');
+    }
   }
 
   @override
@@ -61,7 +67,15 @@ class PostItem extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8.0),
-            // Adicione outros widgets para exibir informações adicionais do post
+            Image.network(post.photo), // Exibindo a foto anexada
+            SizedBox(height: 8.0),
+            Text(
+              'Postado por: ${post.userId}',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),

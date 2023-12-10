@@ -29,7 +29,7 @@ class _AddState extends State<Add> {
           color: Colors.orange,
         ),
         IconButton(
-          onPressed: () {
+          onPressed: () async{
             CreatePost(urlImage, Dados_Usuario.id, text);
           },
           icon: Icon(Icons.add),
