@@ -21,15 +21,6 @@ class _AddState extends State<Add> {
     appBar: AppBar(
       title: Text('Add Post'),
       actions: <Widget>[
-<<<<<<< Updated upstream:telas_calvo/telas_c/lib/Pages/Posts/add.dart
-        TextButton(
-          style: TextButton.styleFrom(foregroundColor: Colors.white,),
-          onPressed:()async{
-            // CreatePost(pickImage as String ,Dados_Usuario.id, text);
-          }
-          ,
-          child: Text('Post'))
-=======
         IconButton(
           onPressed: () async{
             urlImage = (await pickImage())!;
@@ -44,7 +35,6 @@ class _AddState extends State<Add> {
           icon: Icon(Icons.add),
           color: Colors.orange,
         ),
->>>>>>> Stashed changes:telas_calvo/telas_c/lib/Pages/add.dart
       ],
     ),
     body: Container(
