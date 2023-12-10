@@ -33,7 +33,10 @@ class PetTitle extends StatelessWidget {
               IconButton(onPressed: ()async {
                 Deletar_pet(dog.id);
                 Pets.pets=await client_pets_id(Dados_Usuario.id);
-              }, icon: Icon(Icons.delete))
+              }, icon: Icon(Icons.delete)),
+              IconButton(onPressed: ()async {
+                
+              }, icon: Icon(Icons.email))
             ],
           ),
         ));

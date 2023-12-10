@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
@@ -9,6 +11,7 @@ import 'package:telas_c/Pages/cadastropage.dart';
 import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/Pages/Profile.dart';
+import 'package:telas_c/Pages/invite.dart';
 import 'package:telas_c/approute/AppRoute.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
@@ -20,11 +23,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+        Pet dog=Pet(id: "0000000", nome: "senha", tipo: "god", url: "lslsl");
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Bicharia',
-          home: AdicionarAnimal(),
-          routes: {
+          home: Invite(dog),
+          routes: 
+          {
             // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
             Routaaas.Home: (_) => HomePage(),
             Routaaas.Login: (_) => LoginPage(),
