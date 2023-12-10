@@ -6,6 +6,7 @@ import { ListPostsController } from "./controllers/ListPostsController";
 import { DeletePostController } from "./controllers/DeletePostController";
 import { resolveController } from "../adapters/resolveController";
 import { IPostGetByUserRequest } from "../interfaces/IPostInterface";
+import { FindFeedController } from "./controllers/FindFeedController";
 
 export const postRoute = Router();
 
@@ -14,6 +15,7 @@ const createPostController = new CreatePostController(postRepo)
 const getPostController = new GetPostController(postRepo)
 const listPostController = new ListPostsController(postRepo)
 const deletePostController = new DeletePostController(postRepo)
+const findFeedController = new FindFeedController(postRepo)
 
 postRoute.post('/', resolveController(async(req: Request, res: Response) => {
     return await createPostController.handle(req,res)
@@ -29,4 +31,8 @@ postRoute.get('/list/:id', resolveController(async(_: Request, res: Response) =>
 
 postRoute.delete('/:id', resolveController(async(req: Request, res: Response) => {
     return await deletePostController.handle(req,res)
+}))
+
+postRoute.get('/feed/:id', resolveController(async(req: Request, res: Response) => {
+    return await findFeedController.handle(req,res)
 }))

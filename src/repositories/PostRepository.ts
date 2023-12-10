@@ -5,6 +5,33 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export class PostRepository implements IPostRepository{
+
+    async findFeed(id: string): Promise<any[]> {
+        let cont = 0;
+        let array = [];
+
+        const user = await prisma.user.findUnique({
+            where: { id }
+        })
+
+        if(!user) throw new Error('Chama o will que ele arruma')
+
+        while(cont < user?.petsId.length){
+            let id = user.petsId[cont]
+            array.push(await prisma.post.findMany({
+                where: {id}
+            }))
+
+            cont++;
+        }
+
+        return array
+
+    }
+
+
+
+   
     async findAll(userId: string): Promise<IPost[]> {
         const result = await prisma.post.findMany()
         return result;

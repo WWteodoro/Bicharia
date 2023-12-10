@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "pet" (
-    "id" TEXT NOT NULL,
+    "id" UUID NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "type" VARCHAR(255) NOT NULL,
     "photo" VARCHAR(255) NOT NULL,
@@ -29,6 +29,7 @@ CREATE TABLE "post" (
     "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "photo" VARCHAR(255) NOT NULL,
     "userId" UUID NOT NULL,
+    "petId" UUID NOT NULL,
     "text" VARCHAR(255) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -49,7 +50,7 @@ CREATE TABLE "interation" (
 
 -- CreateTable
 CREATE TABLE "_petTouser" (
-    "A" TEXT NOT NULL,
+    "A" UUID NOT NULL,
     "B" UUID NOT NULL
 );
 
@@ -64,6 +65,9 @@ CREATE INDEX "_petTouser_B_index" ON "_petTouser"("B");
 
 -- AddForeignKey
 ALTER TABLE "post" ADD CONSTRAINT "post_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "post" ADD CONSTRAINT "post_petId_fkey" FOREIGN KEY ("petId") REFERENCES "pet"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "interation" ADD CONSTRAINT "interation_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
