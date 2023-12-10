@@ -21,11 +21,11 @@ postRoute.post('/', resolveController(async(req: Request, res: Response) => {
     return await createPostController.handle(req,res)
 }))
 
-postRoute.get('/:id', resolveController(async(req: Request, res: Response) => {
+postRoute.get('/get/:id', resolveController(async(req: Request, res: Response) => {
     return await getPostController.handle(req,res)
 }))
 
-postRoute.get('/:id', resolveController(async(_: Request, res: Response) => {
+postRoute.get('/list/:id', resolveController(async(_: Request, res: Response) => {
     return await listPostController.handle(_,res)
 }))
 

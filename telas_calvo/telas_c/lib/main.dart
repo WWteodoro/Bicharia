@@ -1,5 +1,7 @@
 // ignore_for_file: unused_import
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:telas_c/Pages/Pet_editar.dart';
@@ -9,10 +11,10 @@ import 'package:telas_c/Pages/cadastropage.dart';
 import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/Pages/Profile.dart';
+import 'package:telas_c/Pages/invite.dart';
 import 'package:telas_c/approute/AppRoute.dart';
 import 'Pages/loginpage.dart';
 import 'Pages/editar_user.dart';
-import 'Pages/Petadicionar.dart';
 import 'componentes/model_pet.dart';
 void main() => runApp(const MyApp());
 
@@ -25,8 +27,8 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Bicharia',
           home: CadastroPage(),
-          routes: {
-            // Routaaas.Animal_adicionar: (_) => AdicionarAnimal(),
+          routes: 
+          {
             Routaaas.Home: (_) => HomePage(),
             Routaaas.Login: (_) => LoginPage(),
             Routaaas.Cadastro_user: (_) => CadastroPage(),

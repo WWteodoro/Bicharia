@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/cadastropage.dart';
 import 'package:telas_c/servicos/Apiservicos.dart';
-
+import 'package:telas_c/servicos/dados_autenticados.dart';
 final email = TextEditingController();
 final senha = TextEditingController();
 
@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
               height: 40,
             ),
             GestureDetector(
-              onTap: () {
+              onTap: (){
                 AutenticarUser(email.text, senha.text,context);
               },
               child: Container(

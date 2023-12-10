@@ -6,7 +6,7 @@ import { IPetsUpdateRequest } from "../interfaces/IPetsInterfaces";
 export class UpdatePetService {
     constructor(private petsRepo: IPetsRepository) {}
 
-    async execute({ id, newId, photo, type, name, password, confirmPassword }: IPetsUpdateRequest): Promise<void> {
+    async execute({ id, newId, photo, type, name }: IPetsUpdateRequest): Promise<void> {
         const existingPet = await this.petsRepo.findOnePet(id);
 
         if (!existingPet) {
@@ -18,8 +18,6 @@ export class UpdatePetService {
             name: name || existingPet.name,
             photo: photo || existingPet.photo,
             type: type || existingPet.type,
-            password: password || existingPet.password,
-            confirmPassword: confirmPassword || existingPet.confirmPassword,
         };
 
         const updatedPet = new Pet(updatedPetData, updatedPetData.id);

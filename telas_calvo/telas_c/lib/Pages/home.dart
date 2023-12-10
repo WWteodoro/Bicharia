@@ -1,11 +1,15 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:telas_c/Pages/add.dart';
+import 'package:telas_c/Pages/Posts/add.dart';
+import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/Pages/Profile.dart';
 import 'package:telas_c/Pages/Petadicionar.dart';
-import 'package:telas_c/Pages/Pet_editar.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
+import 'package:telas_c/servicos/dados_autenticados.dart';
+import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/Pages/feed.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [HomeTab(), Add(), PetsTab()];
+  final List<Widget> _children = [FeedPosts(), Add(), PetCadastro()];
 
   void onTabPressed(int index) {
     setState(() {
@@ -33,11 +37,11 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(Icons.logout),
             color: Colors.white,
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
+            onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
             },
           )
         ],
@@ -94,13 +98,5 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     // Replace with the content for the Home tab
     return Center(child: Text('Home Tab Content'));
-  }
-}
-
-class PetsTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Replace with the content for the Pets tab
-    return Center(child: Text('Pets Tab Content'));
   }
 }

@@ -14,7 +14,6 @@ model pet {
   id String @id @db.Uuid
   name String @db.VarChar(255)
   type String @db.VarChar(255)
-  password String @db.VarChar(255)
   owners user[]
   posts post[]
   photo String @db.VarChar(255)

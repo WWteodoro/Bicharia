@@ -13,15 +13,8 @@ const prisma = new PrismaClient();
 
 export class CreatePetService {
     constructor(private petsRepo: IPetsRepository, private userRepo: IUserRepository) {}
-    async execute({ name, type, password, confirmPassword, photo, owners, userId}: IPetsCreateRequest): Promise<void> {
+    async execute({ name, type, photo, owners, userId}: IPetsCreateRequest): Promise<void> {
         
-        if (!validatePassword(password)) {
-            throw new AppError('A senha não atende aos requisitos');
-        }
-
-        if (confirmPassword && !validateConfirmPassword(confirmPassword, password)) {
-            throw new AppError('A confirmação de senha não é igual à senha');
-        }
 
         const id = userId
          
@@ -38,7 +31,6 @@ export class CreatePetService {
         const novoPet = new Pet({
             name,
             type,
-            password,
             photo, 
         });
         
