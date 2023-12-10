@@ -8,11 +8,12 @@ import 'package:file_picker/file_picker.dart';
 
 Future<List<Pet>>client_pets_id(String id)async{
   final pet_f=await http.get(Uri.parse("http://localhost:3333/users/pets/"+id)); 
-  final pet_data=jsonDecode(pet_f.body);
-  print(pet_data);
+  final pet_id=jsonDecode(pet_f.body);
   List<Pet>list=[];
-  for (var i = 0;i < pet_data.length; i++) {
-    list.add(Pet(id: pet_data[i]["id"], nome:pet_data[i]["name"], tipo: pet_data[i]["type"], url: pet_data[i]["photo"]));
+  for (var i = 0;i < pet_id.length; i++) {
+    final pet=await http.get(Uri.parse("http://localhost:3333/pets/"+pet_id[i]));
+    final pet_json=jsonDecode(pet.body);
+    list.add(Pet(id: pet_json["id"], nome:pet_json["name"], tipo: pet_json["type"], url: pet_json["photo"]));
   }
   return list;
 }

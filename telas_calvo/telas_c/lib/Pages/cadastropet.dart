@@ -17,8 +17,14 @@ class PetCadastro extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<PetCadastro> {
+  void atualizar_lista_pets()async{
+    Pets.pets=await client_pets_id(Dados_Usuario.id);
+  }
   @override
   Widget build(BuildContext context) {
+    setState((){
+      atualizar_lista_pets();
+    });
   return Scaffold(
     body: ListView.builder(
           itemCount: Pets.pets.length,

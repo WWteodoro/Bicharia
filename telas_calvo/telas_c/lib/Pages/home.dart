@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.refresh),
             color: Colors.white,
             onPressed: ()async {
-                Pets.pets= await client_pets_id(Dados_Usuario.id);
+                
             },
           )
         ],
