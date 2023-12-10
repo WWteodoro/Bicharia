@@ -68,7 +68,7 @@ Future<void> invite(String email,String petid,BuildContext context) async {
   },
   body: jsonEncode(<String, String>{"petId": petid}));
   ScaffoldMessenger.of(context).showSnackBar(
-  const SnackBar(content: Text('Informações invalidas')),);
+  const SnackBar(content: Text('Convite enviado')),);
 }
 
 Future<void> Deletar_user(String id) async {
