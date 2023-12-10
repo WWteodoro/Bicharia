@@ -62,22 +62,13 @@ Future<void> AutenticarUser(String email, String password,BuildContext context) 
 }
 
 Future<void> invite(String email,String petid,BuildContext context) async {
-    final response = await http.post(
-      Uri.parse('http://localhost:3333/users/invite'+ email),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8'
-      },
-      body: jsonEncode(<String, String>
-      {
-        "petId": petid
-      }
-    )
-    );
-    if(response.statusCode==200) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Convite enviado")));
-    }else{
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("O Email não foi encontrado")));
-    }
+  final response = await http.post(Uri.parse('http://localhost:3333/users/invite/'+ email),
+  headers: <String, String>{
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  body: jsonEncode(<String, String>{"petId": petid}));
+  ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(content: Text('Informações invalidas')),);
 }
 
 Future<void> Deletar_user(String id) async {

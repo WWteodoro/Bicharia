@@ -14,19 +14,27 @@ class Add extends StatefulWidget {
 
 class _AddState extends State<Add> {
   String text = '';
+  late String urlImage;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
       title: Text('Add Post'),
       actions: <Widget>[
-        TextButton(
-          style: TextButton.styleFrom(foregroundColor: Colors.white,),
-          onPressed:()async{
-            // CreatePost(pickImage as String ,Dados_Usuario.id, text);
-          }
-          ,
-          child: Text('Post'))
+        IconButton(
+          onPressed: () async{
+            urlImage = (await pickImage())!;
+          },
+          icon:Icon(Icons.upload),
+          color: Colors.orange,
+        ),
+        IconButton(
+          onPressed: () {
+            CreatePost(urlImage, Dados_Usuario.id, text);
+          },
+          icon: Icon(Icons.add),
+          color: Colors.orange,
+        ),
       ],
     ),
     body: Container(
