@@ -35,10 +35,13 @@ class _HomePageState extends State<HomePage> {
         title: const Text("Home", style: TextStyle(color: Colors.white)),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.refresh),
+            icon: Icon(Icons.logout),
             color: Colors.white,
-            onPressed: ()async {
-                
+            onPressed: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
             },
           )
         ],

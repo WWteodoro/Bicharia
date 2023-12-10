@@ -27,17 +27,17 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/7134a540-0635-432b-b096-a57667a5ba75
+DELETE http://localhost:3333/users/d9586b2d-62a9-4fce-9219-5db5322f81fc
 
 ### Listar pets do user
 GET http://localhost:3333/users/pets/c7d2d121-4168-4800-bfed-6eb2a07b9daa
 
 ### Convidar Usuario por email
-POST http://localhost:3333/users/invite/email.com
+POST http://localhost:3333/users/invite/g@c.com
 Content-Type: application/json
 
 {
-    "petId": "wzYjuPOCr"
+    "petId": "zlklj0Vjb"
 }
 
 
