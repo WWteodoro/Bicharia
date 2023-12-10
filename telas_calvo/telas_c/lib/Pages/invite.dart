@@ -47,19 +47,6 @@ class Invite extends StatelessWidget {
             SizedBox(
               height: 10,
             ),TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                  labelText: "Chave Pet",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  )),
-              style: const TextStyle(fontSize: 20),
-              controller: pet, 
-            ),SizedBox(
-              height: 10,
-            ),TextFormField(
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(
                   labelText: "E-mail",

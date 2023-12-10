@@ -60,7 +60,7 @@ Future<void> AutenticarUser(String email, String password,BuildContext context) 
   }
 }
 
-Future<void> queryByEmail(String email, String nome) async {
+Future<void> invite(String email, String nome) async {
     final response = await http.post(
       Uri.parse('http://localhost:3333/users/invite'),
       headers: <String, String>{
