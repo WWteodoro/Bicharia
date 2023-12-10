@@ -23,14 +23,6 @@ class PetTitle extends StatelessWidget {
           width: 100,
           child: Row(
             children: <Widget>[
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Editar_animal(dog)));
-                  },
-                  icon: Icon(Icons.edit)),
               IconButton(onPressed: ()async {
                 Deletar_pet(dog.id);
                 Pets.pets=await client_pets_id(Dados_Usuario.id);
