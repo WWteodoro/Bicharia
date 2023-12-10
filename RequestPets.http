@@ -32,4 +32,4 @@ GET http://localhost:3333/pets/vb4Gumt4U
 
 
 ### Delete Pet
-DELETE http://localhost:3333/pets/OEOZZw9LO
+DELETE http://localhost:3333/pets/
