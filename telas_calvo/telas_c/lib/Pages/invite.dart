@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/componentes/model_pet.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
 class Invite extends StatelessWidget {
   late Pet dog;
   Invite(Pet dog, {super.key}){
@@ -60,7 +61,11 @@ class Invite extends StatelessWidget {
             ),SizedBox(
               height: 80,
             ),
-            Container(
+            GestureDetector(
+              onTap: ()async{
+                await invite(email.text, dog.id,context);
+              },
+              child: Container(
                 height: 50,
                 width: 50,
                 padding: const EdgeInsets.all(8),
@@ -81,6 +86,7 @@ class Invite extends StatelessWidget {
                       ),
                     ]),
               ),
+            )
           ],
         ),
       ),

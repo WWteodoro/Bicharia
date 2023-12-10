@@ -77,8 +77,7 @@ class AdicionarAnimal extends StatelessWidget {
                 onPressed: ()async {
                   final val = _form.currentState?.validate();
                   if (val == null || val == true) {
-                    await Create_Pet(nome.text, tipo.text, senha.text,
-                    senha_confirmar.text,url, Dados_Usuario.id);
+                    await Create_Pet(nome.text, tipo.text,url, Dados_Usuario.id);
                     Pets.pets=await client_pets_id(Dados_Usuario.id);
                     Navigator.of(context).pop();
                   }

@@ -8,8 +8,6 @@ Content-Type: application/json
 {
   "name": "Belinha",
   "type": "Cachorro",
-  "password": "A.1234567a",
-  "confirmPassword": "A.1234567a", 
   "photo": "URLDaFotoDoPet",
   "owners": {
     "connect": {
