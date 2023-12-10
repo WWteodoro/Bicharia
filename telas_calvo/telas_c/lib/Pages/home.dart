@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:telas_c/Pages/add.dart';
+import 'package:telas_c/Pages/Posts/add.dart';
 import 'package:telas_c/Pages/cadastropet.dart';
 import 'package:telas_c/Pages/loginpage.dart';
 import 'package:telas_c/Pages/Profile.dart';

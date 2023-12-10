@@ -17,6 +17,7 @@ class AdicionarAnimal extends StatelessWidget {
     final _form = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
+          centerTitle: true,
           leading:IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: (){
@@ -24,26 +25,13 @@ class AdicionarAnimal extends StatelessWidget {
             },
             color: Colors.white,
           ),
-          title:Center(child: Center(child:Text(
+          title:Text(
             "Criar Pet",
-            style:TextStyle(fontSize: 30,color: Colors.white,),
-          ) 
-          ),),
+            style:TextStyle(fontSize: 28,color: Colors.white,),
+          ), 
           backgroundColor: Colors.orange,
-          actions: [
-            IconButton(
-                onPressed: ()async {
-                  final val = _form.currentState?.validate();
-                  if (val == null || val == true) {
-                    await Create_Pet(nome.text, tipo.text, senha.text,
-                        senha_confirmar.text,url, Dados_Usuario.id);
-                    Pets.pets=await client_pets_id(Dados_Usuario.id);
-                    Navigator.of(context).pop();
-                  }
-                },
-                icon: Icon(Icons.save_alt_outlined),color: Colors.white,)
-          ]),
-      body: Padding(
+          ),
+      body:Padding(
           padding: EdgeInsets.all(10),
           child: Form(
               key: _form,
@@ -79,16 +67,28 @@ class AdicionarAnimal extends StatelessWidget {
                           return "Campos vazio";
                         }
                         return null;
-                      }),
-                  TextFormField(
-                      controller: senha,
-                      decoration: InputDecoration(labelText: "Senha"),
-                      validator: (validtor) {
-                        if (validtor == null || validtor.isEmpty) {
-                          return "Campos vazio";
-                        }
-                        return null;
-                      }),
+                      }),SizedBox(
+                        height: 20,
+                      ),
+              Center(child:Container(
+              height: 60,
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: ()async {
+                  final val = _form.currentState?.validate();
+                  if (val == null || val == true) {
+                    await Create_Pet(nome.text, tipo.text, senha.text,
+                    senha_confirmar.text,url, Dados_Usuario.id);
+                    Pets.pets=await client_pets_id(Dados_Usuario.id);
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: const Text(
+                  "Criar Pet",
+                  style: TextStyle(color: Colors.orange,fontSize: 20),
+                ),
+              ),                    
+                ) ,)
                 ],
               ))),
     );
