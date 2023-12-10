@@ -7,7 +7,7 @@ import 'package:telas_c/Pages/approute/AppRoute.dart';
 import 'package:telas_c/Pages/home.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 
-Future<void> CreatePost(String idpet, String id) async {
+Future<void> CreatePost(String idpet, String id, String text) async {
     final response = await http.post(
       Uri.parse('http://localhost:3333/posts'),
       headers: <String, String>{
