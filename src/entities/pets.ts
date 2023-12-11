@@ -1,5 +1,6 @@
 import { IPets } from "../interfaces/IPetsInterfaces"
 import { createShortid } from "../utils/createShortid";
+import { createUUID } from "../utils/createUUID";
 
 export class Pet{
     id: string;
@@ -10,7 +11,7 @@ export class Pet{
     updatedAt: IPets['updatedAt'];
 
     constructor(props: Omit<IPets, 'id'>, id?: string){
-        this.id = id || createShortid();
+        this.id = id || createUUID();
         this.name = props.name;
         this.type = props.type;
         this.photo = props.photo;
