@@ -11,12 +11,12 @@ export class CreatePetController {
     }
 
     async handle(req: Request, res: Response): Promise<void> {    
-        const { name, type, photo, owners, userId } = req.body;
+        const { name, type, photo, usersId, userId } = req.body;
             await this.createPetService.execute({
                 name,
                 type,
                 photo,
-                owners,
+                usersId,
                 userId
             });
 

@@ -20,21 +20,21 @@ export class InviteUserByEmailService {
       }
 
       const id = petId;
-      
+      console.log("1")
       //const Pet = await this.petsRepo.findOnePet(petId);
       const Pet = await prisma.pet.findFirst({
         where: { id }
       })
-   
+      console.log("2")
       if(Pet){
       User.petsId?.push(Pet.id)
-      
+      console.log("3")
         await prisma.user.update({
         where: {email},
         data: { id: User.id, name: User.name, email: User.email, password: User.password, petsId: User.petsId }
       })
+      console.log("4")
     }
-
       else throw new AppError('Pet not found')
       
       

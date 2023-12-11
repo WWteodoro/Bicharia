@@ -11,8 +11,8 @@ POST http://localhost:3333/users/
 Content-Type: application/json
 
 {
-    "name": "Clayson",
-    "email": "clayson@email.com",
+    "name": "flebes",
+    "email": "flebes@email.com",
     "password": "A1234567.a"
 }
 ### Update User
@@ -26,16 +26,15 @@ Content-Type: application/json
 }
 
 ### Excluir um Usuário por ID
-DELETE http://localhost:3333/users/a937ad56-1e25-4902-b516-9c6ee844b5e2s
+DELETE http://localhost:3333/users/e94a98fe-7357-4e55-b098-7224f7be4de9
 
 ### Listar pets do user
 GET http://localhost:3333/users/pets/a3afc032-10b0-4014-ad04-f61f1a16ca6a
 
 ### Convidar Usuario por email
-POST http://localhost:3333/users/invite/clayson@email.com
+POST http://localhost:3333/users/invite/flobes@email.com
 Content-Type: application/json
 
 {
-    "petId": "wzYjuPOCr"
-    
+    "petId": "21a2806a-f71e-49ad-ad0d-eb37d0de93ce" 
 }

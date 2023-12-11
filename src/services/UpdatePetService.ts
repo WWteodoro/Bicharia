@@ -18,6 +18,7 @@ export class UpdatePetService {
             name: name || existingPet.name,
             photo: photo || existingPet.photo,
             type: type || existingPet.type,
+            usersId: existingPet.usersId,
         };
 
         const updatedPet = new Pet(updatedPetData, updatedPetData.id);

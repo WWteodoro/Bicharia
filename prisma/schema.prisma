@@ -15,6 +15,7 @@ model pet {
   name String @db.VarChar(255)
   type String @db.VarChar(255)
   owners user[]
+  usersId String [] @db.VarChar(255)
   posts post[]
   photo String @db.VarChar(255)
   createdAt DateTime @default(now())

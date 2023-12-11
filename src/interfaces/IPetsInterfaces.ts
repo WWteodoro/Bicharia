@@ -5,6 +5,7 @@ export interface IPets {
     name: string;
     type: string;
     photo: string;
+    usersId: string[];
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -13,8 +14,8 @@ export interface IPetsCreateRequest{
     name: string;
     type: string;
     photo: string;
-    owners?: IUser[];
-    userId: string; 
+    usersId: string[];
+    userId: string;
 }
 
 

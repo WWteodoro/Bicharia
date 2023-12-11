@@ -3,24 +3,21 @@ GET http://localhost:3333/pets
 
 ### Create Pet
 POST http://localhost:3333/pets
+
 Content-Type: application/json
-
 {
-
-  "name": "lechado",
+  "name": "curioso",
   "type": "Cachorro", 
   "photo": "URLDaFotoDoPet",
-  "owners": {
-    "connect": {
-      "id": "c49a81f7-9475-48e4-9a37-d72254251341"
-    }
-  }
+  "userId": "1a9cef1f-adf5-4fad-9434-e9bfe73aebe1",
+  "usersId": "1a9cef1f-adf5-4fad-9434-e9bfe73aebe1",
 }
 
 ### Update Pet ID
 Update Pet Type
 PUT http://localhost:3333/pets/marmota/updatePet
 Content-Type: application/json
+
 {
   "newId":"marmota",
   "name": "marmota",
@@ -32,4 +29,4 @@ GET http://localhost:3333/pets/vb4Gumt4U
 
 
 ### Delete Pet
-DELETE http://localhost:3333/pets/
+DELETE http://localhost:3333/pets/d430ed7f-15a4-4799-a086-3a7255b2e61c

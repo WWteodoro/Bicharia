@@ -13,35 +13,31 @@ const prisma = new PrismaClient();
 
 export class CreatePetService {
     constructor(private petsRepo: IPetsRepository, private userRepo: IUserRepository) {}
-    async execute({ name, type, photo, owners, userId}: IPetsCreateRequest): Promise<void> {
-        
 
-        const id = userId
-         
+    async execute({ name, type, photo, usersId, userId }: IPetsCreateRequest): Promise<void> {
+        const id = userId;
 
         let user = await prisma.user.findFirst({
             where: { id }
+        });
 
-        })
-        
-        
-        if(!user ) throw new AppError('User not found')
-        
-       
+        if (!user) throw new AppError('User not found');
+
         const novoPet = new Pet({
             name,
             type,
             photo, 
+            usersId: usersId
         });
         
 
         await this.petsRepo.createPet(novoPet.toJson());
 
-        user?.petsId.push(novoPet.id)
-
+        user?.petsId.push(novoPet.id);
+        
         await prisma.user.update({
-            where:  {id: user.id} ,
-            data: {id: user.id, name: user.name, email: user.email, password: user.password, petsId: user.petsId }
-        })
+            where:  { id: user.id } ,
+            data: { id: user.id, name: user.name, email: user.email, password: user.password, petsId: user.petsId }
+        });
     }
 }
