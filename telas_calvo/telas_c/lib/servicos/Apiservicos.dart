@@ -2,10 +2,26 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:telas_c/Pages/approute/AppRoute.dart';
+import 'package:telas_c/componentes/Postmodel.dart';
 import 'package:telas_c/componentes/model_pet.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
 import 'package:file_picker/file_picker.dart';
-
+// ignore: non_constant_identifier_names
+Future<List<PostModel>>list_post(String id)async{
+  final reponsta=await http.get(Uri.parse(
+    "http://localhost:3333/post/feed/"+id
+  ));
+  final json=jsonDecode(reponsta.body) as List<List<Map<String,dynamic>>>;
+  List<PostModel>lista_post=[];
+  for (var i = 0; i <json.length ; i++) {
+    if (json[i].length!=0) {
+     for (var j = 0;j<json[i].length;j++) {
+      
+    } 
+    }
+  }
+  return lista_post;
+}
 Future<List<Pet>>client_pets_id(String id)async{
   final pet_f=await http.get(Uri.parse("http://localhost:3333/users/pets/"+id)); 
   final pet_id=jsonDecode(pet_f.body);

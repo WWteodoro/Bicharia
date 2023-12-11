@@ -4,7 +4,7 @@ GET http://localhost:3333/
 GET http://localhost:3333/users
 
 ### Get User
-GET http://localhost:3333/users/7dcf243c-8391-48b6-a5e7-501339848802
+GET http://localhost:3333/users/
 
 ### Create User
 POST http://localhost:3333/users/
