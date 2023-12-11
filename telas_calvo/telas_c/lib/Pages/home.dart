@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _children = [FeedPosts(), Add(), PetCadastro()];
+  final List<Widget> _children = [FeedPosts(), PetCadastro()];
 
   void onTabPressed(int index) {
     setState(() {
@@ -84,19 +84,10 @@ class _HomePageState extends State<HomePage> {
         showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Novo Post'),
           BottomNavigationBarItem(icon: Icon(Icons.pets), label: 'Pets'),
         ],
       ),
       body: _children[_currentIndex],
     );
-  }
-}
-
-class HomeTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Replace with the content for the Home tab
-    return Center(child: Text('Home Tab Content'));
   }
 }
