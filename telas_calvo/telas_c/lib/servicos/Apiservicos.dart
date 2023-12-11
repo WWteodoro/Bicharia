@@ -19,6 +19,17 @@ Future<List<Pet>>client_pets_id(String id)async{
   }
   return list;
 }
+
+Future<String> GetUser(String id) async{
+  final user=await http.get(Uri.parse("http://localhost:3333/users/"+id),
+  headers: <String, String>{
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  );
+  final p=jsonDecode(user.body) as Map <String, dynamic>;
+  return p['name'];
+}
+
 Future<void> createCliente(String name, String email, String password) async {
   final response = await http.post(
       Uri.parse(

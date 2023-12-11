@@ -1,6 +1,7 @@
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:telas_c/componentes/model_pet.dart';
 
 Future<void> Create_Pet(String pet_name, String type, String? photo, String id_user) async {
   final pet = http.post(
@@ -20,6 +21,17 @@ Future<void> Create_Pet(String pet_name, String type, String? photo, String id_u
     }),
   );
 }
+
+Future<String> GetPet(String id) async{
+  final pet=await http.get(Uri.parse("http://localhost:3333/pets/"+id),
+  headers: <String, String>{
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  );
+  final p=jsonDecode(pet.body) as Map <String, dynamic>;
+  return p['name'];
+}
+
 Future<void> Deletar_pet(String id) async {
   final http.Response response = await http.delete(
     Uri.parse("http://localhost:3333/pets/" + id),

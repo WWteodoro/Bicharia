@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:telas_c/componentes/Postmodel.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
-import 'package:telas_c/servicos/posts.dart'; // Importe seu arquivo posts.dart
+import 'package:telas_c/servicos/posts.dart';
+import 'package:telas_c/servicos/Apipetservicos.dart';
+import 'package:telas_c/servicos/Apiservicos.dart';
 
 class FeedPosts extends StatefulWidget {
   @override
@@ -38,7 +40,7 @@ class _FeedPostsState extends State<FeedPosts> {
       body: ListView.builder(
         itemCount: posts.length,
         itemBuilder: (context, index) {
-          return PostItem(post: posts[index]);
+          return PostItem(posts[index]);
         },
       ),
     );
@@ -48,10 +50,13 @@ class _FeedPostsState extends State<FeedPosts> {
 class PostItem extends StatelessWidget {
   final PostModel post;
 
-  const PostItem({required this.post});
+  PostItem(this.post);
+  
 
   @override
   Widget build(BuildContext context) {
+    final pet_name = GetPet(post.petId);
+    final user_name = GetUser(post.userId);
     return Card(
       margin: EdgeInsets.all(8.0),
       child: Padding(
@@ -70,10 +75,18 @@ class PostItem extends StatelessWidget {
             Image.network(post.photo), // Exibindo a foto anexada
             SizedBox(height: 8.0),
             Text(
-              'Postado por: ${post.userId}',
+              'Postado por: ${user_name}',
               style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+                        SizedBox(height: 8.0),
+            Text(
+              'Pet: ${pet_name}',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontStyle: FontStyle.italic,
               ),
             ),
           ],
