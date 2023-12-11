@@ -36,15 +36,24 @@ Future<void> ApagarPost(String PostId) async {
 
 Future<List<PostModel>> Feed(String userId) async {
   final response = await http.get(
-    Uri.parse('http://localhost:3333/post/feed'),
+    Uri.parse('http://localhost:3333/post/feed/'+userId),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
   );
+  List<PostModel> list_post=[];
+  final  jsonData = jsonDecode(response.body);
+  for (var i = 0; i < jsonData.length; i++) {
+    if (jsonData[i].length!=0) {
+      for (var j = 0; j < jsonData[i].length; j++) {
+        list_post.add(PostModel.fromJson(jsonData[i][j]));
+      }
+    }
+  }
+
 
   if (response.statusCode == 200) {
-    final List<dynamic> jsonData = json.decode(response.body);
-    return jsonData.map((data) => PostModel.fromJson(data)).toList();
+    return list_post;
   } else {
     throw Exception('Failed to load posts');
   }
