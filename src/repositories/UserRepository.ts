@@ -14,7 +14,7 @@ export class UserRepository implements IUserRepository{
          /* const result = await prisma.user.findFirst({
             where:{ id },
         }) */
-
+        
         const array = await prisma.user.findMany()
         let i = 0;
         console.log(id)

@@ -5,16 +5,20 @@ Content-Type: application/json
 {
 
 "photo" : "URLdaFOtoo",
-"userId" : "02674c9e-08cc-4226-81cf-010551b14866",
-"text" : "oi oioi oioiiii lindinho oi iioi oi bichinho"
+"userId" : "c49a81f7-9475-48e4-9a37-d72254251341",
+"text" : "oi oioi oioiiii lindinho oi iioi oi bichinho",
+"petId": "fa9e8a47-e5ce-43ee-b52d-7bdba614a745"
 
 }
 
 ### LIST UM POST (id do user)
-GET  http://localhost:3333/post/list/02674c9e-08cc-4226-81cf-010551b14866
+GET  http://localhost:3333/post/list/c49a81f7-9475-48e4-9a37-d72254251341
 
 ### GET UM POST (id do post)
 GET  http://localhost:3333/post/get/65e4f193-6254-4a76-bda6-14c297960cba
 
 ### DELETE UM POST (id do post)
 DELETE http://localhost:3333/post/65e4f193-6254-4a76-bda6-14c297960cba
+
+### Find Feed
+GET http://localhost:3333/post/feed/c49a81f7-9475-48e4-9a37-d72254251341
