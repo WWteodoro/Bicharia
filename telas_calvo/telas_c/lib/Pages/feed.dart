@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:telas_c/componentes/Postmodel.dart';
 import 'package:telas_c/servicos/dados_autenticados.dart';
@@ -51,12 +53,9 @@ class PostItem extends StatelessWidget {
   final PostModel post;
 
   PostItem(this.post);
-  
 
   @override
   Widget build(BuildContext context) {
-    final pet_name = GetPet(post.petId);
-    final user_name = GetUser(post.userId);
     return Card(
       margin: EdgeInsets.all(8.0),
       child: Padding(
@@ -72,22 +71,46 @@ class PostItem extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8.0),
-            Image.network(post.photo), // Exibindo a foto anexada
+            Image.file(File(post.photo)), // Exibindo a foto anexada
             SizedBox(height: 8.0),
-            Text(
-              'Postado por: ${user_name}',
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-              ),
+            FutureBuilder<String>(
+              future: GetUser(post.userId),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator(); // ou outro indicador de carregamento
+                } else if (snapshot.hasError) {
+                  return Text('Erro ao carregar nome do usuário');
+                } else {
+                  final user_name = snapshot.data;
+                  return Text(
+                    'Postado por: $user_name',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                }
+              },
             ),
-                        SizedBox(height: 8.0),
-            Text(
-              'Pet: ${pet_name}',
-              style: TextStyle(
-                fontSize: 16.0,
-                fontStyle: FontStyle.italic,
-              ),
+            SizedBox(height: 8.0),
+            FutureBuilder<String>(
+              future: GetPet(post.petId),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator(); // ou outro indicador de carregamento
+                } else if (snapshot.hasError) {
+                  return Text('Erro ao carregar nome do pet');
+                } else {
+                  final pet_name = snapshot.data;
+                  return Text(
+                    'Pet: $pet_name',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),

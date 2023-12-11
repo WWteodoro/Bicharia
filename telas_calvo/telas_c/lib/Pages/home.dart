@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(color: Colors.orange),
-              child: Text('User Placeholder'),
+              child: Text(Dados_Usuario.nome),
             ),
             ListTile(
               title: Text('Perfil'),

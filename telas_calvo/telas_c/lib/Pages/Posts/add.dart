@@ -36,6 +36,7 @@ class _AddState extends State<Add> {
         IconButton(
           onPressed: () async{
             await CreatePost(urlImage,widget.dog.id,Dados_Usuario.id,text.text);
+            Navigator.pop(context);
           },
           icon: Icon(Icons.add),
           color: Colors.white,

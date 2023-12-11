@@ -63,7 +63,8 @@ class Invite extends StatelessWidget {
             ),
             GestureDetector(
               onTap: ()async{
-                await invite(email.text, dog.id,context);
+                await invite(email.text, dog.id);
+                Navigator.pop(context);
               },
               child: Container(
                 height: 50,
